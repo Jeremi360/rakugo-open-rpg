@@ -6,6 +6,8 @@
 
 
 
+
+
 [node name="QuestSystem" type="Node"]
 script = ExtResource( 1 )
 

@@ -1,11 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/theme/default.theme" type="Theme" id=1]
-[ext_resource path="res://src/combat/interface/bars/background.png" type="Texture" id=2]
-[ext_resource path="res://src/combat/interface/bars/lifebar/fill.png" type="Texture" id=3]
+[ext_resource path="res://src/combat/interface/bars/lifebar/fill.png" type="Texture" id=2]
+[ext_resource path="res://src/combat/interface/bars/background.png" type="Texture" id=3]
 [ext_resource path="res://src/combat/interface/bars/ValueBarLabel.gd" type="Script" id=4]
-
-
 
 
 [node name="HookableValueBar" type="Control" groups=[
@@ -66,9 +64,9 @@ exp_edit = false
 rounded = false
 allow_greater = false
 allow_lesser = false
-texture_under = ExtResource( 2 )
+texture_under = ExtResource( 3 )
 texture_over = null
-texture_progress = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
 tint_under = Color( 1, 1, 1, 1 )
 tint_over = Color( 1, 1, 1, 1 )
 tint_progress = Color( 1, 1, 1, 1 )
@@ -105,4 +103,3 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 blend_times = [  ]
-

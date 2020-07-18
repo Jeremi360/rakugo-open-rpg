@@ -5,4 +5,3 @@
 [node name="DestinationPoint" type="Sprite"]
 texture = ExtResource( 1 )
 offset = Vector2( 32, 32 )
-

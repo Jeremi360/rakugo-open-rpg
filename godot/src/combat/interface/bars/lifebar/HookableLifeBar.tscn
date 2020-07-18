@@ -5,8 +5,6 @@
 [ext_resource path="res://src/combat/interface/bars/lifebar/LifeBar.gd" type="Script" id=3]
 
 
-
-
 [node name="HookableLifeBar" index="0" instance=ExtResource( 1 )]
 theme = ExtResource( 2 )
 script = ExtResource( 3 )
@@ -15,4 +13,3 @@ HIDE_ON_DEPLETED = true
 
 [node name="LifeLabel" parent="Column" index="1"]
 margin_bottom = 52.0
-

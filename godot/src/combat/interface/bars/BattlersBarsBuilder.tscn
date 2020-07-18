@@ -5,4 +5,3 @@
 
 [node name="BattlersBarsBuilder" type="Node"]
 script = ExtResource( 1 )
-

@@ -5,6 +5,8 @@
 
 
 
+
+
 [node name="DebugInterface" type="Panel"]
 margin_right = 400.0
 margin_bottom = 180.0

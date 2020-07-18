@@ -1,56 +1,27 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://src/combat/interface/circular_menu/CircularButton.gd" type="Script" id=1]
-[ext_resource path="res://src/combat/interface/circular_menu/Tooltip.gd" type="Script" id=2]
-[ext_resource path="res://src/combat/interface/circular_menu/tooltip.png" type="Texture" id=3]
-[ext_resource path="res://assets/fonts/default_theme/montserrat_eb_32.tres" type="DynamicFont" id=4]
-[ext_resource path="res://src/combat/interface/circular_menu/background-inactive.png" type="Texture" id=5]
-[ext_resource path="res://src/combat/interface/circular_menu/circle.png" type="Texture" id=6]
-[ext_resource path="res://assets/theme/icons/sword.png" type="Texture" id=7]
-[ext_resource path="res://src/combat/interface/circular_menu/background-selected.png" type="Texture" id=8]
-
+[ext_resource path="res://assets/fonts/default_theme/montserrat_eb_32.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/combat/interface/circular_menu/CircularButton.gd" type="Script" id=2]
+[ext_resource path="res://src/combat/interface/circular_menu/Tooltip.gd" type="Script" id=3]
+[ext_resource path="res://src/combat/interface/circular_menu/background-inactive.png" type="Texture" id=4]
+[ext_resource path="res://src/combat/interface/circular_menu/circle.png" type="Texture" id=5]
+[ext_resource path="res://assets/theme/icons/sword.png" type="Texture" id=6]
+[ext_resource path="res://src/combat/interface/circular_menu/background-selected.png" type="Texture" id=7]
+[ext_resource path="res://src/combat/interface/circular_menu/tooltip.png" type="Texture" id=8]
 
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-
 [sub_resource type="StyleBoxEmpty" id=2]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-
 [sub_resource type="StyleBoxEmpty" id=4]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 
 [sub_resource type="StyleBoxEmpty" id=5]
 
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-
 [sub_resource type="Animation" id=6]
-
 length = 0.2
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_scale")
 tracks/0/interp = 1
@@ -73,14 +44,11 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 8 ) ]
+"values": [ ExtResource( 4 ), ExtResource( 7 ) ]
 }
 
 [sub_resource type="Animation" id=7]
-
-length = 1.0
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Border:rect_rotation")
 tracks/0/interp = 1
@@ -95,10 +63,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=8]
-
 length = 0.2
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_scale")
 tracks/0/interp = 1
@@ -121,7 +86,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ), ExtResource( 5 ) ]
+"values": [ ExtResource( 7 ), ExtResource( 4 ) ]
 }
 
 [node name="CircularButton" type="Button"]
@@ -152,7 +117,7 @@ shortcut = null
 group = null
 flat = true
 align = 1
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Tooltip" type="Control" parent="."]
 visible = false
@@ -170,7 +135,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -191,7 +156,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 128, 64 )
 patch_margin_left = 16
 patch_margin_top = 16
@@ -213,7 +178,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 1 )
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -236,7 +201,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 stretch_mode = 0
 
 [node name="Background" type="TextureRect" parent="."]
@@ -254,7 +219,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 stretch_mode = 0
 
 [node name="Icon" type="TextureRect" parent="Background"]
@@ -268,7 +233,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 stretch_mode = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -281,4 +246,3 @@ anims/activate = SubResource( 6 )
 anims/active = SubResource( 7 )
 anims/deactivate = SubResource( 8 )
 blend_times = [  ]
-

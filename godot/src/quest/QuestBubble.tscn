@@ -2,13 +2,11 @@
 
 [ext_resource path="res://src/quest/QuestBubble.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/icons/npc_quest_active.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/icons/npc_quest_available.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/icons/npc_quest_finished.png" type="Texture" id=4]
-
+[ext_resource path="res://assets/sprites/icons/npc_quest_finished.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/icons/npc_quest_available.png" type="Texture" id=4]
 
 
 [sub_resource type="Animation" id=1]
-
 resource_name = "wobble"
 loop = true
 tracks/0/type = "value"
@@ -25,7 +23,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="SpriteFrames" id=2]
-
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": false,
@@ -34,12 +31,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": false,
-"name": "quest_available",
+"name": "quest_complete",
 "speed": 0.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": false,
-"name": "quest_complete",
+"name": "quest_available",
 "speed": 0.0
 } ]
 
@@ -53,4 +50,3 @@ anims/wobble = SubResource( 1 )
 frames = SubResource( 2 )
 animation = "quest_available"
 offset = Vector2( 0.555588, -35.6669 )
-

@@ -6,4 +6,3 @@
 [node name="TurnQueue" type="YSort"]
 sort_enabled = true
 script = ExtResource( 1 )
-

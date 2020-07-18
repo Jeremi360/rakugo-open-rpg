@@ -6,6 +6,8 @@
 [ext_resource path="res://src/interface/menus/MenuSfx.tscn" type="PackedScene" id=4]
 
 
+
+
 [node name="ItemsList" type="Panel"]
 
 anchor_left = 0.0
