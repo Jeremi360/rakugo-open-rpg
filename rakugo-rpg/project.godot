@@ -109,6 +109,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/Rakugo/types/quest.gd"
 }, {
+"base": "Character",
+"class": "RPGCharacter",
+"language": "GDScript",
+"path": "res://RPGCharacter.gd"
+}, {
 "base": "AnimationPlayer",
 "class": "RakugoAnimPlayer",
 "language": "GDScript",
@@ -345,6 +350,7 @@ _global_script_class_icons={
 "PlayAnim": "",
 "PlayAudio": "",
 "Quest": "",
+"RPGCharacter": "res://icon.png",
 "RakugoAnimPlayer": "res://addons/Rakugo/icons/rakugo_animation_player.svg",
 "RakugoAsk": "res://addons/Rakugo/icons/rakugo_ask.svg",
 "RakugoAudioPlayer": "res://addons/Rakugo/icons/rakugo_audio_player.svg",
@@ -393,7 +399,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Rakugo RPG"
-run/main_scene="res://game/main/Game.tscn"
+run/main_scene="res://game/Start/Start.tscn"
 config/project_settings_override="res://game/rakugo.cfg"
 boot_splash/image="res://graphics/splash.png"
 boot_splash/fullsize=false
