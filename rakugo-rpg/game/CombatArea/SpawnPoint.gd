@@ -1,5 +1,8 @@
 extends Position2D
 
+onready var button := $VBoxContainer/Button
+var rpg_ch : RPGCharacter
+
 
 func setup(character: RPGCharacter):
 	var hp_bar := $VBoxContainer/ProgressBar
@@ -16,3 +19,7 @@ func setup(character: RPGCharacter):
 
 	label.text = character.character_name
 	label.modulate = character.color
+
+
+func _on_Button_pressed():
+	Rakugo.define("target", rpg_ch)

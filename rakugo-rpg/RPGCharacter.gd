@@ -18,7 +18,7 @@ var unlocked_skills := ["sword attack", "special attack", "healing spell"]
 var attack_skills := {"sword attack": 0}
 var special_skills := {"special attack": 10}
 var magic_skills := {"healing spell": 20}
-var current_attack := {"type": "hp", "value": 0, "target": "character_id"}
+var def := 0
 
 
 func _ready():
@@ -30,22 +30,19 @@ func _ready():
 	stats["unlocked_skills"] = unlocked_skills
 
 
-func use_skill(skill: String, target: String) -> void:
+func use_skill(skill: String, target:RPGCharacter) -> void:
 	# override in script extend form this one fit your heros and enemies
 	if skill == "sword attack":
-		current_attack = {"type": "hp", "value": -20, "target": target}
+		target.recive_attack("hp", -20)
 
 	if skill == "healing spell":
-		# heal is just attack on character itself
-		current_attack = {"type": "hp", "value": 20, "target": character_id}
+		target.recive_attack("hp", 20)
 
 	if skill == "defense":
-		# defense is just attack on character itself
-		current_attack = {"type": "hp", "value": 10, "target": character_id}
+		self.recive_attack("def", 5)
 
 	if skill == "flee":
 		# simple go back to prev dialog.
-		current_attack = {"type": "hp", "value": 0, "target": character_id}
 		Rakugo.hide("CombatArea")
 		var prev = Rakugo.get_value("prev_dialog")
 		Rakugo.jump(prev[0], prev[1], prev[2])
@@ -53,7 +50,12 @@ func use_skill(skill: String, target: String) -> void:
 
 func recive_attack(attack_type: String, value: int):
 	if attack_type == "hp":
-		hp.value += value
+		hp.value += value - def
 
 	if attack_type == "mana":
-		mana.value += value
+		mana.value += value - def
+	
+	def = 0
+
+	if attack_type == "def":
+		def = value

@@ -11,6 +11,7 @@ var _hero: RPGCharacter
 
 func _set_hero(value: RPGCharacter) -> void:
 	_hero = value
+	Rakugo.define("current_hero", _hero)
 	_on_Attack_toggled(true)
 
 
