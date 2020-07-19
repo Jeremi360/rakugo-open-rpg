@@ -16,8 +16,11 @@
 [node name="CombatArea" type="Control" groups=[
 "save",
 ]]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 1024.0
+margin_bottom = 600.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -52,15 +55,11 @@ position = Vector2( 827.472, 403.857 )
 position = Vector2( 951.831, 403.857 )
 
 [node name="CombatPanel" type="Panel" parent="."]
-anchor_left = -0.00260711
-anchor_top = 0.968854
-anchor_right = 0.997393
-anchor_bottom = 1.00218
-margin_left = 2.66968
-margin_top = -101.312
-margin_right = 2.66968
-margin_bottom = -1.30939
-rect_min_size = Vector2( 0, 120 )
+anchor_top = 0.867
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.200012
+rect_min_size = Vector2( 0, 80 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true,
@@ -70,8 +69,10 @@ attack_button = ExtResource( 6 )
 skill_buttons_parent_path = NodePath("HBox/GridContainer")
 
 [node name="HBox" type="HBoxContainer" parent="CombatPanel"]
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -80.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -80,13 +81,13 @@ __meta__ = {
 
 [node name="SkillTypesBox" type="GridContainer" parent="CombatPanel/HBox"]
 margin_right = 268.0
-margin_bottom = 120.0
+margin_bottom = 80.0
 size_flags_vertical = 3
 columns = 3
 
 [node name="Attack" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
 margin_right = 86.0
-margin_bottom = 58.0
+margin_bottom = 38.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = true
@@ -98,7 +99,7 @@ icon = ExtResource( 10 )
 [node name="Magic" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
 margin_left = 90.0
 margin_right = 173.0
-margin_bottom = 58.0
+margin_bottom = 38.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = true
@@ -109,7 +110,7 @@ icon = ExtResource( 9 )
 [node name="Special" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
 margin_left = 177.0
 margin_right = 268.0
-margin_bottom = 58.0
+margin_bottom = 38.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = true
@@ -118,9 +119,9 @@ text = "Special"
 icon = ExtResource( 7 )
 
 [node name="Defense" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
-margin_top = 62.0
+margin_top = 42.0
 margin_right = 86.0
-margin_bottom = 120.0
+margin_bottom = 80.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = true
@@ -129,9 +130,9 @@ text = "Defense"
 
 [node name="Flee" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
 margin_left = 90.0
-margin_top = 62.0
+margin_top = 42.0
 margin_right = 173.0
-margin_bottom = 120.0
+margin_bottom = 80.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 toggle_mode = true
@@ -142,7 +143,7 @@ icon = ExtResource( 8 )
 [node name="GridContainer" type="GridContainer" parent="CombatPanel/HBox"]
 margin_left = 272.0
 margin_right = 1024.0
-margin_bottom = 120.0
+margin_bottom = 80.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
