@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://game/assets/fonts/default_theme/montserrat_eb_32.tres" type="DynamicFont" id=2]
+[ext_resource path="res://game/CombatArea/SpawnPoint.gd" type="Script" id=4]
+[ext_resource path="res://game/CombatArea/mana_bar_fg.tres" type="StyleBox" id=5]
+[ext_resource path="res://game/CombatArea/hp_bar_fg.tres" type="StyleBox" id=6]
+[ext_resource path="res://game/CombatArea/bar_bg.tres" type="StyleBox" id=7]
+
+[node name="SpawnPoint" type="Position2D"]
+position = Vector2( 180.203, 433.823 )
+script = ExtResource( 4 )
+__meta__ = {
+"_gizmo_extents_": 39.1
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = -62.9289
+margin_top = -385.065
+margin_right = 55.0711
+margin_bottom = -297.065
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 118.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Enemy"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+margin_top = 44.0
+margin_right = 118.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/fg = ExtResource( 6 )
+custom_styles/bg = ExtResource( 7 )
+step = 1.0
+value = 100.0
+rounded = true
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar2" type="ProgressBar" parent="VBoxContainer"]
+margin_top = 68.0
+margin_right = 118.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/fg = ExtResource( 5 )
+custom_styles/bg = ExtResource( 7 )
+step = 1.0
+value = 100.0
+rounded = true
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

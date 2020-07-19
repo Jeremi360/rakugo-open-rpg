@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://game/assets/sprites/battlers/godette.png" type="Texture" id=1]
 [ext_resource path="res://RPGCharacter.gd" type="Script" id=2]
+[ext_resource path="res://addons/Rakugo/nodes/button2D.gd" type="Script" id=3]
 
-[node name="Godette" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 86.0453
+height = 72.2964
+
+[node name="Godette" type="Area2D"]
+script = ExtResource( 3 )
+use_colors_from_theme = false
+idle_color = Color( 0, 0, 0, 0 )
+disable_color = Color( 0, 0, 0, 0 )
 
 [node name="RPGCharacter" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -12,4 +21,11 @@ character_name = "Godette"
 color = Color( 0.176471, 0.462745, 0.678431, 1 )
 
 [node name="godette" type="Sprite" parent="."]
+position = Vector2( -0.427124, -1.492 )
+scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 1 )
+offset = Vector2( 12.5022, -169.454 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4.85628, -119.304 )
+shape = SubResource( 1 )

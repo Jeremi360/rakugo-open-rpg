@@ -1,136 +1,153 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://game/assets/sprites/background/grasslands/grasslands.png" type="Texture" id=1]
-[ext_resource path="res://game/assets/fonts/default_theme/montserrat_eb_32.tres" type="DynamicFont" id=2]
-[ext_resource path="res://game/CombatArea/SpawnPoint.gd" type="Script" id=3]
+[ext_resource path="res://game/CombatArea/SpawnPoint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/CombatArea/CombatArea.gd" type="Script" id=3]
 [ext_resource path="res://game/CombatArea/Spawner.gd" type="Script" id=4]
+[ext_resource path="res://game/CombatArea/CombatPanel.gd" type="Script" id=5]
+[ext_resource path="res://game/CombatArea/AttackButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/assets/icons/purse.png" type="Texture" id=7]
+[ext_resource path="res://game/assets/icons/cancel.png" type="Texture" id=8]
+[ext_resource path="res://game/assets/icons/fire_scroll.png" type="Texture" id=9]
+[ext_resource path="res://game/assets/icons/sword.png" type="Texture" id=10]
 
-[node name="CombatArea" type="Node2D"]
+[sub_resource type="ButtonGroup" id=1]
+
+[node name="CombatArea" type="Control" groups=[
+"save",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+use_theme_from_setting = true
+node_id = "CombatArea"
 
 [node name="grasslands" type="Sprite" parent="."]
-position = Vector2( 512.599, 299.014 )
-scale = Vector2( 0.534915, 0.553005 )
+position = Vector2( 512.599, 299.763 )
+scale = Vector2( 0.534915, 0.554392 )
 texture = ExtResource( 1 )
 
 [node name="YSort" type="YSort" parent="."]
 script = ExtResource( 4 )
 
-[node name="Enemy0" type="Position2D" parent="YSort"]
-position = Vector2( 180.203, 355.067 )
-script = ExtResource( 3 )
-__meta__ = {
-"_gizmo_extents_": 39.1
-}
+[node name="Enemy0" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 325.539, 408.352 )
 
-[node name="Label" type="Label" parent="YSort/Enemy0"]
-margin_left = -66.742
-margin_top = -128.145
-margin_right = 51.258
-margin_bottom = -88.1446
-custom_fonts/font = ExtResource( 2 )
-text = "Enemy"
-align = 1
+[node name="Enemy1" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 201.179, 408.352 )
+
+[node name="Enemy2" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 79.8164, 408.352 )
+
+[node name="Hero0" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 701.614, 403.857 )
+
+[node name="Hero1" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 827.472, 403.857 )
+
+[node name="Hero2" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 951.831, 403.857 )
+
+[node name="CombatPanel" type="Panel" parent="."]
+anchor_left = -0.00260711
+anchor_top = 0.968854
+anchor_right = 0.997393
+anchor_bottom = 1.00218
+margin_left = 2.66968
+margin_top = -101.312
+margin_right = 2.66968
+margin_bottom = -1.30939
+rect_min_size = Vector2( 0, 120 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": true
+}
+attack_button = ExtResource( 6 )
+skill_buttons_parent_path = NodePath("HBox/GridContainer")
+
+[node name="HBox" type="HBoxContainer" parent="CombatPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ProgressBar" type="ProgressBar" parent="YSort/Enemy0"]
-margin_left = -64.0723
-margin_top = -90.7691
-margin_right = 53.9277
-margin_bottom = -70.7691
+[node name="SkillTypesBox" type="GridContainer" parent="CombatPanel/HBox"]
+margin_right = 268.0
+margin_bottom = 120.0
+size_flags_vertical = 3
+columns = 3
+
+[node name="Attack" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
+margin_right = 86.0
+margin_bottom = 58.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-step = 1.0
-value = 100.0
-percent_visible = false
+toggle_mode = true
+pressed = true
+group = SubResource( 1 )
+text = "Attack"
+icon = ExtResource( 10 )
 
-[node name="Enemy1" type="Position2D" parent="YSort"]
-position = Vector2( 180.203, 433.823 )
-script = ExtResource( 3 )
-__meta__ = {
-"_gizmo_extents_": 39.1
-}
-
-[node name="Label" type="Label" parent="YSort/Enemy1"]
-margin_left = -66.742
-margin_top = -128.145
-margin_right = 51.258
-margin_bottom = -88.1446
-custom_fonts/font = ExtResource( 2 )
-text = "Enemy"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ProgressBar" type="ProgressBar" parent="YSort/Enemy1"]
-margin_left = -64.0723
-margin_top = -90.7691
-margin_right = 53.9277
-margin_bottom = -70.7691
+[node name="Magic" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
+margin_left = 90.0
+margin_right = 173.0
+margin_bottom = 58.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-step = 1.0
-value = 100.0
-percent_visible = false
+toggle_mode = true
+group = SubResource( 1 )
+text = "Magic"
+icon = ExtResource( 9 )
 
-[node name="Hero0" type="Position2D" parent="YSort"]
-position = Vector2( 815.587, 352.398 )
-script = ExtResource( 3 )
-__meta__ = {
-"_gizmo_extents_": 39.1
-}
-
-[node name="Label" type="Label" parent="YSort/Hero0"]
-margin_left = -66.742
-margin_top = -128.145
-margin_right = 51.258
-margin_bottom = -88.1446
-custom_fonts/font = ExtResource( 2 )
-text = "Hero"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ProgressBar" type="ProgressBar" parent="YSort/Hero0"]
-margin_left = -64.0723
-margin_top = -90.7691
-margin_right = 53.9277
-margin_bottom = -70.7691
+[node name="Special" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
+margin_left = 177.0
+margin_right = 268.0
+margin_bottom = 58.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-step = 1.0
-value = 100.0
-percent_visible = false
+toggle_mode = true
+group = SubResource( 1 )
+text = "Special"
+icon = ExtResource( 7 )
 
-[node name="Hero1" type="Position2D" parent="YSort"]
-position = Vector2( 815.587, 431.153 )
-script = ExtResource( 3 )
-__meta__ = {
-"_gizmo_extents_": 39.1
-}
-
-[node name="Label" type="Label" parent="YSort/Hero1"]
-margin_left = -66.742
-margin_top = -128.145
-margin_right = 51.258
-margin_bottom = -88.1446
-custom_fonts/font = ExtResource( 2 )
-text = "Hero"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ProgressBar" type="ProgressBar" parent="YSort/Hero1"]
-margin_left = -64.0723
-margin_top = -90.7691
-margin_right = 53.9277
-margin_bottom = -70.7691
+[node name="Defense" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
+margin_top = 62.0
+margin_right = 86.0
+margin_bottom = 120.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-step = 1.0
-value = 100.0
-percent_visible = false
+toggle_mode = true
+group = SubResource( 1 )
+text = "Defense"
+
+[node name="Flee" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
+margin_left = 90.0
+margin_top = 62.0
+margin_right = 173.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+group = SubResource( 1 )
+text = "Flee"
+icon = ExtResource( 8 )
+
+[node name="GridContainer" type="GridContainer" parent="CombatPanel/HBox"]
+margin_left = 272.0
+margin_right = 1024.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+[connection signal="toggled" from="CombatPanel/HBox/SkillTypesBox/Attack" to="CombatPanel" method="_on_Attack_toggled"]
+[connection signal="toggled" from="CombatPanel/HBox/SkillTypesBox/Magic" to="CombatPanel" method="_on_Magic_toggled"]
+[connection signal="toggled" from="CombatPanel/HBox/SkillTypesBox/Special" to="CombatPanel" method="_on_Special_toggled"]
+[connection signal="pressed" from="CombatPanel/HBox/SkillTypesBox/Defense" to="CombatPanel" method="_on_Defense_pressed"]
+[connection signal="pressed" from="CombatPanel/HBox/SkillTypesBox/Flee" to="CombatPanel" method="_on_Flee_pressed"]

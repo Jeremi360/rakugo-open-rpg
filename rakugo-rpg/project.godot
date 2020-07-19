@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/Rakugo/statements/ask.gd"
 }, {
+"base": "RakugoButton",
+"class": "AttackButton",
+"language": "GDScript",
+"path": "res://game/CombatArea/AttackButton.gd"
+}, {
 "base": "RakugoTimer",
 "class": "AutoTimer",
 "language": "GDScript",
@@ -331,6 +336,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Ask": "",
+"AttackButton": "",
 "AutoTimer": "",
 "Avatar": "",
 "Button2D": "res://addons/Rakugo/icons/button_2d.svg",
@@ -404,7 +410,7 @@ config/project_settings_override="res://game/rakugo.cfg"
 boot_splash/image="res://graphics/splash.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://graphics/window_icon.png"
+config/icon="res://icon.png"
 config/auto_accept_quit=false
 config/quit_on_go_back=false
 rakugo/version="0.0.1"
