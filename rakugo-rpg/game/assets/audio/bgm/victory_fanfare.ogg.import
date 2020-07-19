@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/victory_fanfare.ogg-6833a02fc3e786593a9175b5a0932324.oggstr"
+
+[deps]
+
+source_file="res://game/assets/audio/bgm/victory_fanfare.ogg"
+dest_files=[ "res://.import/victory_fanfare.ogg-6833a02fc3e786593a9175b5a0932324.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

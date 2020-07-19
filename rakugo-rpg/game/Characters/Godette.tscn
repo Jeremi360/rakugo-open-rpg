@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/assets/sprites/battlers/godette.png" type="Texture" id=1]
+[ext_resource path="res://RPGCharacter.gd" type="Script" id=2]
+
+[node name="Godette" type="Node2D"]
+
+[node name="RPGCharacter" type="Node" parent="."]
+script = ExtResource( 2 )
+character_id = "go"
+character_name = "Godette"
+color = Color( 0.176471, 0.462745, 0.678431, 1 )
+
+[node name="godette" type="Sprite" parent="."]
+texture = ExtResource( 1 )
