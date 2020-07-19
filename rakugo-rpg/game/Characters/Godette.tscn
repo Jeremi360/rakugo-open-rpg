@@ -12,4 +12,7 @@ character_name = "Godette"
 color = Color( 0.176471, 0.462745, 0.678431, 1 )
 
 [node name="godette" type="Sprite" parent="."]
+position = Vector2( -0.427124, -1.492 )
+scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 1 )
+offset = Vector2( 12.5022, -169.454 )
