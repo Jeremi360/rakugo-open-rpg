@@ -8,10 +8,14 @@ func start_combat():
 	var party : = spawn_party(Rakugo.get_value("party"))
 	var enemies : = spawn_enemies(Rakugo.get_value("enemies"))
 	$CombatPanel.current_hero = party[0]
+	
+	for t in get_tree().get_nodes_in_group("target"):
+		t.hide()
 
 
 func get_spawn_point(type:String, id:int) -> Node:
 	return get_node(str(spawn_parent_path) + "/" + type + str(id))
+
 
 func spawn(type:String, array:Array) -> Array:
 	var arr := []

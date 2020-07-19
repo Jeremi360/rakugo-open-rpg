@@ -7,7 +7,7 @@ var _rtext := "attack"
 
 
 func set_attack(attack: String, cost: int) -> void:
-	cost_txt = str(cost)
+	var cost_txt = str(cost)
 
 	if cost == 0:
 		cost_txt = ""

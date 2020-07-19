@@ -30,7 +30,7 @@ func _ready():
 	stats["unlocked_skills"] = unlocked_skills
 
 
-func use_skill(skill: String, target:RPGCharacter) -> void:
+func use_skill(skill: String, target:RPGCharacter = self) -> void:
 	# override in script extend form this one fit your heros and enemies
 	if skill == "sword attack":
 		target.recive_attack("hp", -20)

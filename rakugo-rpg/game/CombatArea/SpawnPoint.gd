@@ -8,6 +8,9 @@ func setup(character: RPGCharacter):
 	var hp_bar := $VBoxContainer/ProgressBar
 	var mana_bar := $VBoxContainer/ProgressBar2
 	var label := $VBoxContainer/Label
+	
+	rpg_ch = character
+	add_to_group(character.type)
 
 	hp_bar.min_value = character.hp.min_value
 	hp_bar.max_value = character.hp.max_value
@@ -22,4 +25,10 @@ func setup(character: RPGCharacter):
 
 
 func _on_Button_pressed():
-	Rakugo.define("target", rpg_ch)
+	for t in get_tree().get_nodes_in_group("target"):
+		t.hide()
+		
+	var attacker : RPGCharacter = Rakugo.get_value("current_hero")
+	var skill : String = Rakugo.get_value("current_skill")
+	attacker.use_skill(skill, rpg_ch)
+	

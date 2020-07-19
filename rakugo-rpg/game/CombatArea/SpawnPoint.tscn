@@ -68,8 +68,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="VBoxContainer"]
-visible = false
+[node name="Button" type="Button" parent="VBoxContainer" groups=[
+"targets",
+]]
 margin_top = 92.0
 margin_right = 118.0
 margin_bottom = 112.0
