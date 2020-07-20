@@ -4,9 +4,11 @@ export var attack_button: PackedScene
 export var target_button: PackedScene
 export var skills_buttons_parent_path: NodePath
 export var targets_buttons_parent_path: NodePath
+export var ai_manager_path: NodePath
 
 onready var skills_buttons_parent = get_node(skills_buttons_parent_path)
 onready var targets_buttons_parent = get_node(targets_buttons_parent_path)
+onready var ai_manager = get_node(ai_manager_path)
 
 var current_hero: RPGCharacter setget _set_hero
 var _hero: RPGCharacter
@@ -19,6 +21,7 @@ var current_party_member := 0
 
 func _set_hero(value: RPGCharacter) -> void:
 	_hero = value
+	current_party_member = party.find(value)
 	_on_Attack_toggled(true)
 
 
@@ -114,4 +117,6 @@ func _on_target_button_pressed(target: RPGCharacter):
 		_set_hero(party[current_party_member])
 	
 	else:
-		pass
+		hide()
+		ai_manager.enemy = enemies[0]
+
