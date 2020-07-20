@@ -4,7 +4,7 @@
 [ext_resource path="res://game/CombatArea/SpawnPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/CombatArea/CombatArea.gd" type="Script" id=3]
 [ext_resource path="res://game/CombatArea/CombatPanel.gd" type="Script" id=5]
-[ext_resource path="res://game/CombatArea/AttackButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/CombatArea/RPGButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/assets/icons/purse.png" type="Texture" id=7]
 [ext_resource path="res://game/assets/icons/cancel.png" type="Texture" id=8]
 [ext_resource path="res://game/assets/icons/fire_scroll.png" type="Texture" id=9]
@@ -59,13 +59,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -0.200012
 rect_min_size = Vector2( 0, 80 )
+mouse_filter = 1
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": true
 }
 attack_button = ExtResource( 6 )
-skill_buttons_parent_path = NodePath("HBox/GridContainer")
+target_button = ExtResource( 6 )
+skills_buttons_parent_path = NodePath("HBox/SkillsGrid")
+targets_buttons_parent_path = NodePath("HBox/TargetsGrid")
 
 [node name="HBox" type="HBoxContainer" parent="CombatPanel"]
 anchor_top = 1.0
@@ -78,13 +81,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SkillTypesBox" type="GridContainer" parent="CombatPanel/HBox"]
+[node name="SkillTypesGrid" type="GridContainer" parent="CombatPanel/HBox"]
 margin_right = 268.0
 margin_bottom = 80.0
 size_flags_vertical = 3
 columns = 3
 
-[node name="Attack" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
+[node name="Attack" type="Button" parent="CombatPanel/HBox/SkillTypesGrid"]
 margin_right = 86.0
 margin_bottom = 38.0
 size_flags_horizontal = 3
@@ -95,7 +98,7 @@ group = SubResource( 1 )
 text = "Attack"
 icon = ExtResource( 10 )
 
-[node name="Magic" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
+[node name="Magic" type="Button" parent="CombatPanel/HBox/SkillTypesGrid"]
 margin_left = 90.0
 margin_right = 173.0
 margin_bottom = 38.0
@@ -106,7 +109,7 @@ group = SubResource( 1 )
 text = "Magic"
 icon = ExtResource( 9 )
 
-[node name="Special" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
+[node name="Special" type="Button" parent="CombatPanel/HBox/SkillTypesGrid"]
 margin_left = 177.0
 margin_right = 268.0
 margin_bottom = 38.0
@@ -117,7 +120,7 @@ group = SubResource( 1 )
 text = "Special"
 icon = ExtResource( 7 )
 
-[node name="Defense" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
+[node name="Defense" type="Button" parent="CombatPanel/HBox/SkillTypesGrid"]
 margin_top = 42.0
 margin_right = 86.0
 margin_bottom = 80.0
@@ -127,7 +130,7 @@ toggle_mode = true
 group = SubResource( 1 )
 text = "Defense"
 
-[node name="Flee" type="Button" parent="CombatPanel/HBox/SkillTypesBox"]
+[node name="Flee" type="Button" parent="CombatPanel/HBox/SkillTypesGrid"]
 margin_left = 90.0
 margin_top = 42.0
 margin_right = 173.0
@@ -139,15 +142,24 @@ group = SubResource( 1 )
 text = "Flee"
 icon = ExtResource( 8 )
 
-[node name="GridContainer" type="GridContainer" parent="CombatPanel/HBox"]
+[node name="SkillsGrid" type="GridContainer" parent="CombatPanel/HBox"]
 margin_left = 272.0
 margin_right = 1024.0
 margin_bottom = 80.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
-[connection signal="toggled" from="CombatPanel/HBox/SkillTypesBox/Attack" to="CombatPanel" method="_on_Attack_toggled"]
-[connection signal="toggled" from="CombatPanel/HBox/SkillTypesBox/Magic" to="CombatPanel" method="_on_Magic_toggled"]
-[connection signal="toggled" from="CombatPanel/HBox/SkillTypesBox/Special" to="CombatPanel" method="_on_Special_toggled"]
-[connection signal="pressed" from="CombatPanel/HBox/SkillTypesBox/Defense" to="CombatPanel" method="_on_Defense_pressed"]
-[connection signal="pressed" from="CombatPanel/HBox/SkillTypesBox/Flee" to="CombatPanel" method="_on_Flee_pressed"]
+
+[node name="TargetsGrid" type="GridContainer" parent="CombatPanel/HBox"]
+visible = false
+margin_left = 650.0
+margin_right = 1024.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+[connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Attack" to="CombatPanel" method="_on_Attack_toggled"]
+[connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Magic" to="CombatPanel" method="_on_Magic_toggled"]
+[connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Special" to="CombatPanel" method="_on_Special_toggled"]
+[connection signal="pressed" from="CombatPanel/HBox/SkillTypesGrid/Defense" to="CombatPanel" method="_on_Defense_pressed"]
+[connection signal="pressed" from="CombatPanel/HBox/SkillTypesGrid/Flee" to="CombatPanel" method="_on_Flee_pressed"]

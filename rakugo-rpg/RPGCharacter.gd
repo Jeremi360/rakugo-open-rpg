@@ -3,6 +3,7 @@ class_name RPGCharacter, "res://icon.png"
 
 # make scripts that extend form this one fit your heros and enemies
 
+export (String, FILE, "*.png") var icon_path := ""
 export (String, "Hero", "Enemy", "NPC") var type := "Hero"
 
 export var level := 1
@@ -20,6 +21,9 @@ var special_skills := {"special attack": 10}
 var magic_skills := {"healing spell": 20}
 var def := 0
 
+var hp_bar: ProgressBar
+var mana_bar: ProgressBar
+
 
 func _ready():
 	# this stuff will be saved when player save game
@@ -30,7 +34,7 @@ func _ready():
 	stats["unlocked_skills"] = unlocked_skills
 
 
-func use_skill(skill: String, target:RPGCharacter = self) -> void:
+func use_skill(skill: String, target: RPGCharacter = self) -> void:
 	# override in script extend form this one fit your heros and enemies
 	if skill == "sword attack":
 		target.recive_attack("hp", -20)
@@ -51,10 +55,12 @@ func use_skill(skill: String, target:RPGCharacter = self) -> void:
 func recive_attack(attack_type: String, value: int):
 	if attack_type == "hp":
 		hp.value += value - def
+		hp_bar.value = hp.value
 
 	if attack_type == "mana":
 		mana.value += value - def
-	
+		mana_bar.value = mana.value
+
 	def = 0
 
 	if attack_type == "def":
