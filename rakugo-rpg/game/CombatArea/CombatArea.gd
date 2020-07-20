@@ -7,12 +7,16 @@ var prev_name := ""
 var temp_id := 0
 
 
-func start_combat():
+func start_combat(started_by:="party"):
 	Rakugo.hide("InGameGUI")
-	var party := spawn_party(Rakugo.get_value("party"))
-	var enemies := spawn_enemies(Rakugo.get_value("enemies"))
-	$CombatPanel.current_hero = party[0]
-	$CombatPanel.make_enemies_buttons(enemies)
+	$CombatPanel.party = spawn_party(Rakugo.get_value("party"))
+	$CombatPanel.enemies = spawn_enemies(Rakugo.get_value("enemies"))
+
+	if started_by == "party":
+		$CombatPanel.current_hero = $CombatPanel.party[0]
+	
+	if started_by == "enemies":
+		pass
 
 
 func get_spawn_point(type: String, id: int) -> Node:

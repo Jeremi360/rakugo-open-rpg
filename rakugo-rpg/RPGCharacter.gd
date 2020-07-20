@@ -14,11 +14,16 @@ var special := RakugoRangedVar.new("special", 100, 0, 100)
 var unlocked_skills := ["sword attack", "special attack", "healing spell"]
 
 # this are just examples
-# {"attack name":attack_cost}
 # you can override them in _ready() by extending from this script
-var attack_skills := {"sword attack": 0}
-var special_skills := {"special attack": 10}
-var magic_skills := {"healing spell": 20}
+var attack_skills := {
+	"sword attack": {"cost": 0, "targets": "enemies"}
+}
+var magic_skills := {
+	"healing spell": {"cost": 20, "targets": "enemies"}
+}
+var special_skills := {
+	"special attack": {"cost": 20, "targets": "party"}
+}
 var def := 0
 
 var hp_bar: ProgressBar
@@ -54,10 +59,8 @@ func use_skill(skill: String, target: RPGCharacter = self) -> void:
 
 func recive_attack(attack_type: String, value: int):
 	if attack_type == "hp":
-		prints(character_name, "before hit", value, "hp =", hp.value)
 		hp.value += value - def
 		hp_bar.value = hp.value
-		prints(character_name, "take hit", value, "hp =", hp.value)
 
 	if attack_type == "mana":
 		mana.value += value - def
