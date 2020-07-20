@@ -5,10 +5,14 @@ export var target_button: PackedScene
 export var skills_buttons_parent_path: NodePath
 export var targets_buttons_parent_path: NodePath
 export var ai_manager_path: NodePath
+export var visual_feedback_path : NodePath
+export var timer_path : NodePath 
 
+onready var visual_feedback : RakugoTextLabel = get_node(visual_feedback_path)
 onready var skills_buttons_parent = get_node(skills_buttons_parent_path)
 onready var targets_buttons_parent = get_node(targets_buttons_parent_path)
 onready var ai_manager = get_node(ai_manager_path)
+onready var timer : Timer = get_node(timer_path)
 
 var current_hero: RPGCharacter setget _set_hero
 var _hero: RPGCharacter
@@ -111,6 +115,10 @@ func set_skill(skill: String):
 func _on_target_button_pressed(target: RPGCharacter):
 	targets_buttons_parent.hide()
 	_hero.use_skill(current_skill, target)
+	visual_feedback.set_visual_feedback(_hero, current_skill, target)
+	
+	timer.start()
+	yield(timer, "timeout")
 	
 	current_party_member += 1
 	if party.size() > current_party_member:

@@ -2,7 +2,12 @@ extends Node
 # script that manages enemies
 
 export var combat_panel_path : NodePath
-onready var  combat_panel = get_node(combat_panel_path)
+export var visual_feedback_path : NodePath
+export var timer_path : NodePath 
+
+onready var combat_panel = get_node(combat_panel_path)
+onready var visual_feedback : RakugoTextLabel = get_node(visual_feedback_path)
+onready var timer : Timer = get_node(timer_path)
 var enemy : RPGCharacter setget _set_enemy, _get_enemy
 
 var party := []
@@ -58,7 +63,10 @@ func use_random_skill() -> void:
 	var skill := get_random_skill(skill_type)
 	var target := get_random_target(skill)
 	_enemy.use_skill(skill, target)
-	prints("enemy use skill", skill, "on", target.character_name)
+	visual_feedback.set_visual_feedback(_enemy, skill, target)
+
+	timer.start()
+	yield(timer, "timeout")
 
 	current_enemies_member += 1
 	if enemies.size() > current_enemies_member:

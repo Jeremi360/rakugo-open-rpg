@@ -28,6 +28,8 @@ var def := 0
 
 var hp_bar: ProgressBar
 var mana_bar: ProgressBar
+var hit_label : Label
+var hit_anim : AnimationPlayer
 
 
 func _ready():
@@ -47,17 +49,17 @@ func use_skill(skill: String, target: RPGCharacter = self) -> void:
 	s /= 20
 
 	if skill == "sword attack":
-		target.recive_attack("hp", -20 * s)
+		target.recive_attack("hp", -20 * s, "hit")
 
 	if skill == "healing spell":
 		mana.value -= magic_skills[skill].cost
-		target.recive_attack("hp", 20 * s)
+		target.recive_attack("hp", 20 * s, "heal")
 
 	if skill == "special attack":
-		target.recive_attack("hp", -30 * s)
+		target.recive_attack("hp", -30 * s, "hit")
 
 	if skill == "defense":
-		self.recive_attack("def", 5 * s)
+		self.recive_attack("def", 5 * s, "def")
 
 	if skill == "flee":
 		# simple go back to prev dialog.
@@ -66,11 +68,17 @@ func use_skill(skill: String, target: RPGCharacter = self) -> void:
 		Rakugo.jump(prev[0], prev[1], prev[2])
 
 
-func recive_attack(attack_type: String, value: int):
+func recive_attack(attack_type: String, value: int, anim:String):
 	# minius will subtract from target hp/mana/def
 	# plus will add to target hp/mana/def
 
-	prints("recive_attack", attack_type, value)
+	hit_label.text = str(value)
+		
+	if value >= 0:
+		hit_label.text = "+" + str(value)
+	
+	hit_anim.play(anim)
+
 	if attack_type == "hp":
 		hp.value += value - def
 		hp_bar.value = hp.value

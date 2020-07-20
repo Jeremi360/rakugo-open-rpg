@@ -22,3 +22,5 @@ func setup(character: RPGCharacter):
 
 	label.text = character.character_name
 	label.modulate = character.color
+	character.hit_label = $Label2
+	character.hit_anim = $AnimationPlayer

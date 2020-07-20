@@ -16,3 +16,4 @@ func set_rpg_text(label: String, cost := 0, icon_path := "") -> void:
 	$RakugoTextLabel.rakugo_text = "{center}"
 	$RakugoTextLabel.rakugo_text += t_arr.join(" ")
 	$RakugoTextLabel.rakugo_text += "{/center}"
+	$RakugoTextLabel.update_label()
