@@ -10,6 +10,7 @@ script = ExtResource( 2 )
 character_id = "go"
 character_name = "Godette"
 color = Color( 0.176471, 0.462745, 0.678431, 1 )
+level = 2
 
 [node name="godette" type="Sprite" parent="."]
 position = Vector2( -0.427124, -1.492 )

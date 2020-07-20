@@ -42,8 +42,8 @@ func _ready():
 func use_skill(skill: String, target: RPGCharacter = self) -> void:
 	# override this func in script extend form this one fit your heros and enemies
 	randomize()
-	# random bettween strength 0.1 - 1
-	var s : float = randi() % 100 + 10
+	# random bettween strength 0.1 * level - 1
+	var s : float = randi() % 100 + (10 * level)
 	s /= 100
 
 	if skill == "sword attack":
