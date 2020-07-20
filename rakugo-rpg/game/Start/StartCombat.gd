@@ -6,7 +6,6 @@ export (Array, PackedScene) var enemies := []
 
 onready var combat_area: Control = get_node(combat_area_path)
 
-
 func start_combat():
 	Rakugo.define("party", party)
 	Rakugo.define("enemies", enemies)

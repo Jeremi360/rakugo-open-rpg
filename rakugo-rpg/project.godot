@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/Rakugo/statements/ask.gd"
 }, {
-"base": "RakugoButton",
-"class": "AttackButton",
-"language": "GDScript",
-"path": "res://game/CombatArea/AttackButton.gd"
-}, {
 "base": "RakugoTimer",
 "class": "AutoTimer",
 "language": "GDScript",
@@ -113,6 +108,11 @@ _global_script_classes=[ {
 "class": "Quest",
 "language": "GDScript",
 "path": "res://addons/Rakugo/types/quest.gd"
+}, {
+"base": "RakugoButton",
+"class": "RPGButton",
+"language": "GDScript",
+"path": "res://game/CombatArea/RPGButton.gd"
 }, {
 "base": "Character",
 "class": "RPGCharacter",
@@ -336,7 +336,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Ask": "",
-"AttackButton": "",
 "AutoTimer": "",
 "Avatar": "",
 "Button2D": "res://addons/Rakugo/icons/button_2d.svg",
@@ -356,6 +355,7 @@ _global_script_class_icons={
 "PlayAnim": "",
 "PlayAudio": "",
 "Quest": "",
+"RPGButton": "",
 "RPGCharacter": "res://icon.png",
 "RakugoAnimPlayer": "res://addons/Rakugo/icons/rakugo_animation_player.svg",
 "RakugoAsk": "res://addons/Rakugo/icons/rakugo_ask.svg",
@@ -413,7 +413,7 @@ boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 config/auto_accept_quit=false
 config/quit_on_go_back=false
-rakugo/version="0.0.1"
+rakugo/version="0.1.0"
 rakugo/game_credits="Jeremi {i}jebedaia360{/i} Biernacki"
 rakugo/debug=false
 rakugo/save_folder="saves"
