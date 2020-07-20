@@ -15,6 +15,7 @@ var skill_type := ""
 
 var party := []
 var enemies := []
+var current_party_member := 0 
 
 func _set_hero(value: RPGCharacter) -> void:
 	_hero = value
@@ -107,3 +108,10 @@ func set_skill(skill: String):
 func _on_target_button_pressed(target: RPGCharacter):
 	targets_buttons_parent.hide()
 	_hero.use_skill(current_skill, target)
+	
+	if party.size() > current_party_member:
+		current_party_member += 1
+		_set_hero(party[current_party_member])
+	
+	else:
+		pass
