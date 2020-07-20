@@ -1,16 +1,62 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://game/assets/sprites/background/grasslands/grasslands.png" type="Texture" id=1]
 [ext_resource path="res://game/CombatArea/SpawnPoint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/CombatArea/CombatArea.gd" type="Script" id=3]
+[ext_resource path="res://game/CombatArea/AIManager.gd" type="Script" id=4]
 [ext_resource path="res://game/CombatArea/CombatPanel.gd" type="Script" id=5]
 [ext_resource path="res://game/CombatArea/RPGButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/assets/icons/purse.png" type="Texture" id=7]
 [ext_resource path="res://game/assets/icons/cancel.png" type="Texture" id=8]
 [ext_resource path="res://game/assets/icons/fire_scroll.png" type="Texture" id=9]
 [ext_resource path="res://game/assets/icons/sword.png" type="Texture" id=10]
+[ext_resource path="res://game/CombatArea/VisualFeedback.gd" type="Script" id=11]
+[ext_resource path="res://game/assets/fonts/default_theme/montserrat_eb_48.tres" type="DynamicFont" id=12]
 
 [sub_resource type="ButtonGroup" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "show_n_hide"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.7, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.7, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.7, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.7, 1 )
+}
 
 [node name="CombatArea" type="Control" groups=[
 "save",
@@ -69,6 +115,9 @@ attack_button = ExtResource( 6 )
 target_button = ExtResource( 6 )
 skills_buttons_parent_path = NodePath("HBox/SkillsGrid")
 targets_buttons_parent_path = NodePath("HBox/TargetsGrid")
+ai_manager_path = NodePath("../AIManager")
+visual_feedback_path = NodePath("../VisualFeedback")
+timer_path = NodePath("../Timer")
 
 [node name="HBox" type="HBoxContainer" parent="CombatPanel"]
 anchor_top = 1.0
@@ -158,6 +207,37 @@ margin_bottom = 80.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
+
+[node name="AIManager" type="Node" parent="."]
+script = ExtResource( 4 )
+combat_panel_path = NodePath("../CombatPanel")
+visual_feedback_path = NodePath("../VisualFeedback")
+timer_path = NodePath("../Timer")
+
+[node name="VisualFeedback" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.00174004
+anchor_top = 0.313761
+anchor_right = 1.00174
+anchor_bottom = 0.313761
+margin_bottom = 63.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/normal_font = ExtResource( 12 )
+bbcode_enabled = true
+bbcode_text = "[center] some one get hit[/center]"
+text = " some one get hit"
+scroll_active = false
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VisualFeedback"]
+anims/show_n_hide = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 [connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Attack" to="CombatPanel" method="_on_Attack_toggled"]
 [connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Magic" to="CombatPanel" method="_on_Magic_toggled"]
 [connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Special" to="CombatPanel" method="_on_Special_toggled"]

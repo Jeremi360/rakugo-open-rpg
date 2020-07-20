@@ -1,10 +1,342 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://game/assets/fonts/default_theme/montserrat_eb_32.tres" type="DynamicFont" id=2]
 [ext_resource path="res://game/CombatArea/SpawnPoint.gd" type="Script" id=4]
 [ext_resource path="res://game/CombatArea/mana_bar_fg.tres" type="StyleBox" id=5]
 [ext_resource path="res://game/CombatArea/hp_bar_fg.tres" type="StyleBox" id=6]
 [ext_resource path="res://game/CombatArea/bar_bg.tres" type="StyleBox" id=7]
+
+[sub_resource type="Animation" id=4]
+resource_name = "def"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Label2:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.337255, -0.25, 0, 0.25, 0, 0.894118, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Label2:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.862745, -0.25, 0, 0.25, 0, 0.176471, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Label2:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.0980392, -0.25, 0, 0.25, 0, 0.109804, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Label2:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Label2:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -62.3992, -0.25, 0, 0.25, 0, -62.3991, -0.25, 0, 0.25, 0, -61.8694, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Label2:rect_position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( -296.243, -0.25, 0, 0.25, 0, -304.189, -0.25, 0, 0.25, 0, -295.184, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Label2:rect_size:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 118, -0.25, 0, 0.25, 0, 118, -0.25, 0, 0.25, 0, 118, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Label2:rect_size:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 40, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "heal"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Label2:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.337255, -0.25, 0, 0.25, 0, 0.337255, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Label2:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.862745, -0.25, 0, 0.25, 0, 0.862745, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Label2:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.0980392, -0.25, 0, 0.25, 0, 0.0980392, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Label2:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Label2:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -62.3992, -0.25, 0, 0.25, 0, -62.3991, -0.25, 0, 0.25, 0, -61.8694, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Label2:rect_position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( -296.243, -0.25, 0, 0.25, 0, -304.189, -0.25, 0, 0.25, 0, -295.184, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Label2:rect_size:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 118, -0.25, 0, 0.25, 0, 118, -0.25, 0, 0.25, 0, 118, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Label2:rect_size:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 40, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "hit"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Label2:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.894118, -0.25, 0, 0.25, 0, 0.894118, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Label2:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.176471, -0.25, 0, 0.25, 0, 0.176471, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Label2:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.109804, -0.25, 0, 0.25, 0, 0.109804, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Label2:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Label2:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -62.3992, -0.25, 0, 0.25, 0, -62.3991, -0.25, 0, 0.25, 0, -61.8694, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Label2:rect_position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( -296.243, -0.25, 0, 0.25, 0, -304.189, -0.25, 0, 0.25, 0, -295.184, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Label2:rect_size:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 118, -0.25, 0, 0.25, 0, 118, -0.25, 0, 0.25, 0, 118, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Label2:rect_size:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 40, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "mana"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Label2:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.337255, -0.25, 0, 0.25, 0, 0.894118, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Label2:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.862745, -0.25, 0, 0.25, 0, 0.176471, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Label2:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.0980392, -0.25, 0, 0.25, 0, 0.109804, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Label2:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Label2:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -62.3992, -0.25, 0, 0.25, 0, -62.3991, -0.25, 0, 0.25, 0, -61.8694, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Label2:rect_position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( -296.243, -0.25, 0, 0.25, 0, -304.189, -0.25, 0, 0.25, 0, -295.184, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Label2:rect_size:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 118, -0.25, 0, 0.25, 0, 118, -0.25, 0, 0.25, 0, 118, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Label2:rect_size:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 40, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0, 40, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
 
 [node name="SpawnPoint" type="Position2D"]
 position = Vector2( 180.203, 433.823 )
@@ -67,3 +399,24 @@ percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = -62.3992
+margin_top = -296.243
+margin_right = 55.6008
+margin_bottom = -256.243
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Hit"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/def = SubResource( 4 )
+anims/heal = SubResource( 1 )
+anims/hit = SubResource( 2 )
+anims/mana = SubResource( 3 )

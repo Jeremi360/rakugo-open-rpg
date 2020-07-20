@@ -19,15 +19,17 @@ var attack_skills := {
 	"sword attack": {"cost": 0, "targets": "enemies"}
 }
 var magic_skills := {
-	"healing spell": {"cost": 20, "targets": "enemies"}
+	"healing spell": {"cost": 20, "targets": "party"}
 }
 var special_skills := {
-	"special attack": {"cost": 20, "targets": "party"}
+	"special attack": {"cost": 20, "targets": "enemies"}
 }
 var def := 0
 
 var hp_bar: ProgressBar
 var mana_bar: ProgressBar
+var hit_label : Label
+var hit_anim : AnimationPlayer
 
 
 func _ready():
@@ -40,15 +42,24 @@ func _ready():
 
 
 func use_skill(skill: String, target: RPGCharacter = self) -> void:
-	# override in script extend form this one fit your heros and enemies
+	# override this func in script extend form this one fit your heros and enemies
+	randomize()
+	# random dnd roll dice style
+	var s : float = randi() % 20 + level
+	s /= 20
+
 	if skill == "sword attack":
-		target.recive_attack("hp", -20)
+		target.recive_attack("hp", -20 * s, "hit")
 
 	if skill == "healing spell":
-		target.recive_attack("hp", 20)
+		mana.value -= magic_skills[skill].cost
+		target.recive_attack("hp", 20 * s, "heal")
+
+	if skill == "special attack":
+		target.recive_attack("hp", -30 * s, "hit")
 
 	if skill == "defense":
-		self.recive_attack("def", 5)
+		self.recive_attack("def", 5 * s, "def")
 
 	if skill == "flee":
 		# simple go back to prev dialog.
@@ -57,7 +68,17 @@ func use_skill(skill: String, target: RPGCharacter = self) -> void:
 		Rakugo.jump(prev[0], prev[1], prev[2])
 
 
-func recive_attack(attack_type: String, value: int):
+func recive_attack(attack_type: String, value: int, anim:String):
+	# minius will subtract from target hp/mana/def
+	# plus will add to target hp/mana/def
+
+	hit_label.text = str(value)
+		
+	if value >= 0:
+		hit_label.text = "+" + str(value)
+	
+	hit_anim.play(anim)
+
 	if attack_type == "hp":
 		hp.value += value - def
 		hp_bar.value = hp.value
