@@ -37,7 +37,7 @@ __meta__ = {
 [node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
 margin_top = 44.0
 margin_right = 118.0
-margin_bottom = 76.0
+margin_bottom = 64.0
 rect_min_size = Vector2( 0, 20 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -52,9 +52,9 @@ __meta__ = {
 }
 
 [node name="ProgressBar2" type="ProgressBar" parent="VBoxContainer"]
-margin_top = 80.0
+margin_top = 68.0
 margin_right = 118.0
-margin_bottom = 112.0
+margin_bottom = 88.0
 rect_min_size = Vector2( 0, 20 )
 size_flags_horizontal = 3
 size_flags_vertical = 3

@@ -30,4 +30,7 @@ bbcode_text = "[center]Attack cost[center]"
 text = "Attack cost"
 scroll_active = false
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 rakugo_text = "Attack "
