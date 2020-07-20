@@ -8,9 +8,9 @@ export (String, "Hero", "Enemy", "NPC") var type := "Hero"
 
 export var level := 1
 # RakugoRangedVar.value is always clamped bettween min and max 
-var hp = RakugoRangedVar.new("hp", 100, 0, 100)
-var mana = RakugoRangedVar.new("mana", 100, 0, 100)
-var special = RakugoRangedVar.new("special", 100, 0, 100)
+var hp := RakugoRangedVar.new("hp", 100, 0, 100)
+var mana := RakugoRangedVar.new("mana", 100, 0, 100)
+var special := RakugoRangedVar.new("special", 100, 0, 100)
 var unlocked_skills := ["sword attack", "special attack", "healing spell"]
 
 # this are just examples
@@ -54,8 +54,10 @@ func use_skill(skill: String, target: RPGCharacter = self) -> void:
 
 func recive_attack(attack_type: String, value: int):
 	if attack_type == "hp":
+		prints(character_name, "before hit", value, "hp =", hp.value)
 		hp.value += value - def
 		hp_bar.value = hp.value
+		prints(character_name, "take hit", value, "hp =", hp.value)
 
 	if attack_type == "mana":
 		mana.value += value - def
