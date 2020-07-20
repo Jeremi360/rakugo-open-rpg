@@ -8,8 +8,6 @@ var temp_id := 0
 
 
 func start_combat(started_by:="party"):
-	# new seed for random stuff
-	randomize()
 	Rakugo.hide("InGameGUI")
 	var party := spawn_party(Rakugo.get_value("party"))
 	var enemies := spawn_enemies(Rakugo.get_value("enemies"))

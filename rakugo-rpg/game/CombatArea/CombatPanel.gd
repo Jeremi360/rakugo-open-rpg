@@ -21,8 +21,8 @@ var current_party_member := 0
 
 func _set_hero(value: RPGCharacter) -> void:
 	_hero = value
-	current_party_member = party.find(value)
 	_on_Attack_toggled(true)
+	skills_buttons_parent.show()
 
 
 func _get_hero() -> RPGCharacter:
@@ -102,7 +102,7 @@ func set_skill(skill: String):
 		targets = enemies
 	
 	if arr[current_skill].targets == "party":
-		targets = party	
+		targets = party
 
 	make_targets_buttons(targets)
 	targets_buttons_parent.show()
@@ -112,11 +112,12 @@ func _on_target_button_pressed(target: RPGCharacter):
 	targets_buttons_parent.hide()
 	_hero.use_skill(current_skill, target)
 	
+	current_party_member += 1
 	if party.size() > current_party_member:
-		current_party_member += 1
 		_set_hero(party[current_party_member])
 	
 	else:
 		hide()
+		current_party_member = 0
 		ai_manager.enemy = enemies[0]
 

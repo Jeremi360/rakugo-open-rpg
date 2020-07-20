@@ -19,10 +19,10 @@ var attack_skills := {
 	"sword attack": {"cost": 0, "targets": "enemies"}
 }
 var magic_skills := {
-	"healing spell": {"cost": 20, "targets": "enemies"}
+	"healing spell": {"cost": 20, "targets": "party"}
 }
 var special_skills := {
-	"special attack": {"cost": 20, "targets": "party"}
+	"special attack": {"cost": 20, "targets": "enemies"}
 }
 var def := 0
 
@@ -45,7 +45,11 @@ func use_skill(skill: String, target: RPGCharacter = self) -> void:
 		target.recive_attack("hp", -20)
 
 	if skill == "healing spell":
+		mana.value -= magic_skills[skill].cost
 		target.recive_attack("hp", 20)
+
+	if skill == "special attack":
+		target.recive_attack("hp", -30)
 
 	if skill == "defense":
 		self.recive_attack("def", 5)
@@ -58,6 +62,8 @@ func use_skill(skill: String, target: RPGCharacter = self) -> void:
 
 
 func recive_attack(attack_type: String, value: int):
+	# minius will subtract from target hp/mana/def
+	# plus will add to target hp/mana/def
 	if attack_type == "hp":
 		hp.value += value - def
 		hp_bar.value = hp.value

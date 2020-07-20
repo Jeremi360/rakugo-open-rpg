@@ -70,6 +70,7 @@ attack_button = ExtResource( 6 )
 target_button = ExtResource( 6 )
 skills_buttons_parent_path = NodePath("HBox/SkillsGrid")
 targets_buttons_parent_path = NodePath("HBox/TargetsGrid")
+ai_manager_path = NodePath("../AIManager")
 
 [node name="HBox" type="HBoxContainer" parent="CombatPanel"]
 anchor_top = 1.0
@@ -162,6 +163,7 @@ columns = 3
 
 [node name="AIManager" type="Node" parent="."]
 script = ExtResource( 4 )
+combat_panel_path = NodePath("../CombatPanel")
 [connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Attack" to="CombatPanel" method="_on_Attack_toggled"]
 [connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Magic" to="CombatPanel" method="_on_Magic_toggled"]
 [connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Special" to="CombatPanel" method="_on_Special_toggled"]
