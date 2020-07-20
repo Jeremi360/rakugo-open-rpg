@@ -40,19 +40,24 @@ func _ready():
 
 
 func use_skill(skill: String, target: RPGCharacter = self) -> void:
-	# override in script extend form this one fit your heros and enemies
+	# override this func in script extend form this one fit your heros and enemies
+	randomize()
+	# random bettween strength 0.1 - 1
+	var s : float = randi() % 100 + 10
+	s /= 100
+
 	if skill == "sword attack":
-		target.recive_attack("hp", -20)
+		target.recive_attack("hp", -20 * s)
 
 	if skill == "healing spell":
 		mana.value -= magic_skills[skill].cost
-		target.recive_attack("hp", 20)
+		target.recive_attack("hp", 20 * s)
 
 	if skill == "special attack":
-		target.recive_attack("hp", -30)
+		target.recive_attack("hp", -30 * s)
 
 	if skill == "defense":
-		self.recive_attack("def", 5)
+		self.recive_attack("def", 5 * s)
 
 	if skill == "flee":
 		# simple go back to prev dialog.
@@ -64,6 +69,8 @@ func use_skill(skill: String, target: RPGCharacter = self) -> void:
 func recive_attack(attack_type: String, value: int):
 	# minius will subtract from target hp/mana/def
 	# plus will add to target hp/mana/def
+
+	prints("recive_attack", attack_type, value)
 	if attack_type == "hp":
 		hp.value += value - def
 		hp_bar.value = hp.value
