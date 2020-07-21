@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://RPGCharacter.gd" type="Script" id=1]
+[ext_resource path="res://game/rpg/Characters/RPGCharacter.gd" type="Script" id=1]
 [ext_resource path="res://game/assets/sprites/battlers/porcupine.png" type="Texture" id=2]
+
 
 [node name="Enemy" type="Node2D"]
 

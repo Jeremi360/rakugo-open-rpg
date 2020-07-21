@@ -2,7 +2,7 @@
 
 [ext_resource path="res://themes/rpgm_like/rpgm_like.tres" type="Theme" id=1]
 [ext_resource path="res://addons/Rakugo/nodes/rakugo_label.gd" type="Script" id=2]
-[ext_resource path="res://game/CombatArea/RPGButton.gd" type="Script" id=3]
+[ext_resource path="res://game/rpg/CombatArea/RPGButton.gd" type="Script" id=3]
 
 [node name="RPGButton" type="Button"]
 margin_right = 250.0

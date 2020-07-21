@@ -112,12 +112,12 @@ _global_script_classes=[ {
 "base": "RakugoButton",
 "class": "RPGButton",
 "language": "GDScript",
-"path": "res://game/CombatArea/RPGButton.gd"
+"path": "res://game/rpg/CombatArea/RPGButton.gd"
 }, {
 "base": "Character",
 "class": "RPGCharacter",
 "language": "GDScript",
-"path": "res://RPGCharacter.gd"
+"path": "res://game/rpg/Characters/RPGCharacter.gd"
 }, {
 "base": "AnimationPlayer",
 "class": "RakugoAnimPlayer",
@@ -405,7 +405,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Rakugo RPG"
-run/main_scene="res://game/Start/Start.tscn"
+run/main_scene="res://game/rpg/Start/Start.tscn"
 config/project_settings_override="res://game/rakugo.cfg"
 boot_splash/image="res://graphics/splash.png"
 boot_splash/fullsize=false
