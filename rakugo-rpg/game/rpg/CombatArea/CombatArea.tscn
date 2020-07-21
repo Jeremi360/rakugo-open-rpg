@@ -1,17 +1,19 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://game/assets/sprites/background/grasslands/grasslands.png" type="Texture" id=1]
-[ext_resource path="res://game/CombatArea/SpawnPoint.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/CombatArea/CombatArea.gd" type="Script" id=3]
-[ext_resource path="res://game/CombatArea/AIManager.gd" type="Script" id=4]
-[ext_resource path="res://game/CombatArea/CombatPanel.gd" type="Script" id=5]
-[ext_resource path="res://game/CombatArea/RPGButton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://game/assets/icons/purse.png" type="Texture" id=7]
-[ext_resource path="res://game/assets/icons/cancel.png" type="Texture" id=8]
-[ext_resource path="res://game/assets/icons/fire_scroll.png" type="Texture" id=9]
-[ext_resource path="res://game/assets/icons/sword.png" type="Texture" id=10]
-[ext_resource path="res://game/CombatArea/VisualFeedback.gd" type="Script" id=11]
-[ext_resource path="res://game/assets/fonts/default_theme/montserrat_eb_48.tres" type="DynamicFont" id=12]
+[ext_resource path="res://game/assets/fonts/default_theme/montserrat_eb_48.tres" type="DynamicFont" id=1]
+[ext_resource path="res://game/rpg/CombatArea/SpawnPoint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/rpg/CombatArea/RPGButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/assets/sprites/background/grasslands/grasslands.png" type="Texture" id=4]
+[ext_resource path="res://game/assets/icons/purse.png" type="Texture" id=5]
+[ext_resource path="res://game/assets/icons/cancel.png" type="Texture" id=6]
+[ext_resource path="res://game/assets/icons/fire_scroll.png" type="Texture" id=7]
+[ext_resource path="res://game/assets/icons/sword.png" type="Texture" id=8]
+[ext_resource path="res://game/rpg/CombatArea/AIManager.gd" type="Script" id=9]
+[ext_resource path="res://game/rpg/CombatArea/CombatPanel.gd" type="Script" id=10]
+[ext_resource path="res://game/rpg/CombatArea/VisualFeedback.gd" type="Script" id=11]
+[ext_resource path="res://game/rpg/CombatArea/CombatArea.gd" type="Script" id=12]
+[ext_resource path="res://game/rpg/CombatArea/EndCombatPanel.gd" type="Script" id=13]
+[ext_resource path="res://game/rpg/CombatArea/ExpBox.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ButtonGroup" id=1]
 
@@ -66,7 +68,7 @@ margin_bottom = 600.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 3 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -77,7 +79,7 @@ spawn_parent_path = NodePath("YSort")
 [node name="grasslands" type="Sprite" parent="."]
 position = Vector2( 512.599, 299.763 )
 scale = Vector2( 0.534915, 0.554392 )
-texture = ExtResource( 1 )
+texture = ExtResource( 4 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -106,18 +108,19 @@ anchor_bottom = 1.0
 margin_top = -0.200012
 rect_min_size = Vector2( 0, 80 )
 mouse_filter = 1
-script = ExtResource( 5 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": true
 }
-attack_button = ExtResource( 6 )
-target_button = ExtResource( 6 )
+attack_button = ExtResource( 3 )
+target_button = ExtResource( 3 )
 skills_buttons_parent_path = NodePath("HBox/SkillsGrid")
 targets_buttons_parent_path = NodePath("HBox/TargetsGrid")
 ai_manager_path = NodePath("../AIManager")
 visual_feedback_path = NodePath("../VisualFeedback")
 timer_path = NodePath("../Timer")
+end_combat_panel_path = NodePath("../EndCombatPanel")
 
 [node name="HBox" type="HBoxContainer" parent="CombatPanel"]
 anchor_top = 1.0
@@ -145,7 +148,7 @@ toggle_mode = true
 pressed = true
 group = SubResource( 1 )
 text = "Attack"
-icon = ExtResource( 10 )
+icon = ExtResource( 8 )
 
 [node name="Magic" type="Button" parent="CombatPanel/HBox/SkillTypesGrid"]
 margin_left = 90.0
@@ -156,7 +159,7 @@ size_flags_vertical = 3
 toggle_mode = true
 group = SubResource( 1 )
 text = "Magic"
-icon = ExtResource( 9 )
+icon = ExtResource( 7 )
 
 [node name="Special" type="Button" parent="CombatPanel/HBox/SkillTypesGrid"]
 margin_left = 177.0
@@ -167,7 +170,7 @@ size_flags_vertical = 3
 toggle_mode = true
 group = SubResource( 1 )
 text = "Special"
-icon = ExtResource( 7 )
+icon = ExtResource( 5 )
 
 [node name="Defense" type="Button" parent="CombatPanel/HBox/SkillTypesGrid"]
 margin_top = 42.0
@@ -189,7 +192,7 @@ size_flags_vertical = 3
 toggle_mode = true
 group = SubResource( 1 )
 text = "Flee"
-icon = ExtResource( 8 )
+icon = ExtResource( 6 )
 
 [node name="SkillsGrid" type="GridContainer" parent="CombatPanel/HBox"]
 margin_left = 272.0
@@ -209,10 +212,11 @@ size_flags_vertical = 3
 columns = 3
 
 [node name="AIManager" type="Node" parent="."]
-script = ExtResource( 4 )
+script = ExtResource( 9 )
 combat_panel_path = NodePath("../CombatPanel")
 visual_feedback_path = NodePath("../VisualFeedback")
 timer_path = NodePath("../Timer")
+end_combat_panel_path = NodePath("../EndCombatPanel")
 
 [node name="VisualFeedback" type="RichTextLabel" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -222,7 +226,7 @@ anchor_right = 1.00174
 anchor_bottom = 0.313761
 margin_bottom = 63.0
 rect_min_size = Vector2( 0, 50 )
-custom_fonts/normal_font = ExtResource( 12 )
+custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center] some one get hit[/center]"
 text = " some one get hit"
@@ -238,8 +242,63 @@ anims/show_n_hide = SubResource( 2 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="EndCombatPanel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -203.5
+margin_top = -143.0
+margin_right = 203.5
+margin_bottom = 143.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+win_txt = "Your Party Wins"
+win_color = Color( 0.776471, 0.521569, 0.0352941, 1 )
+lose_txt = "Your Party Lose"
+lose_color = Color( 0.815686, 0.0431373, 0.0431373, 1 )
+exp_box = ExtResource( 14 )
+box_path = NodePath("VBoxContainer/VBoxContainer2")
+label_path = NodePath("VBoxContainer/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndCombatPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="EndCombatPanel/VBoxContainer"]
+margin_right = 407.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+text = "Win/Lose"
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="EndCombatPanel/VBoxContainer"]
+margin_top = 64.0
+margin_right = 407.0
+margin_bottom = 244.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="EndCombatPanel/VBoxContainer"]
+margin_left = 163.0
+margin_top = 248.0
+margin_right = 244.0
+margin_bottom = 286.0
+size_flags_horizontal = 4
+text = "Close"
+icon = ExtResource( 6 )
 [connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Attack" to="CombatPanel" method="_on_Attack_toggled"]
 [connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Magic" to="CombatPanel" method="_on_Magic_toggled"]
 [connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Special" to="CombatPanel" method="_on_Special_toggled"]
 [connection signal="pressed" from="CombatPanel/HBox/SkillTypesGrid/Defense" to="CombatPanel" method="_on_Defense_pressed"]
 [connection signal="pressed" from="CombatPanel/HBox/SkillTypesGrid/Flee" to="CombatPanel" method="_on_Flee_pressed"]
+[connection signal="pressed" from="EndCombatPanel/VBoxContainer/Button" to="EndCombatPanel" method="_on_Button_pressed"]

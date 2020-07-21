@@ -6,13 +6,15 @@ export var skills_buttons_parent_path: NodePath
 export var targets_buttons_parent_path: NodePath
 export var ai_manager_path: NodePath
 export var visual_feedback_path : NodePath
-export var timer_path : NodePath 
+export var timer_path : NodePath
+export var end_combat_panel_path : NodePath
 
 onready var visual_feedback : RakugoTextLabel = get_node(visual_feedback_path)
 onready var skills_buttons_parent = get_node(skills_buttons_parent_path)
 onready var targets_buttons_parent = get_node(targets_buttons_parent_path)
 onready var ai_manager = get_node(ai_manager_path)
 onready var timer : Timer = get_node(timer_path)
+onready var end_combat_panel : Panel = get_node(end_combat_panel_path)
 
 var current_hero: RPGCharacter setget _set_hero
 var _hero: RPGCharacter
@@ -21,7 +23,18 @@ var skill_type := ""
 
 var party := []
 var enemies := []
+
 var current_party_member := 0 
+var active_party_size := 0 # number of alive party members
+var active_enemies_size := 0 # number of alive enemies
+
+func set_party_n_enemies(party_arr:Array, enemies_arr:Array) -> void:
+	party = party_arr
+	active_party_size = party_arr.size()
+
+	enemies = enemies_arr
+	active_enemies_size = enemies_arr.size()
+
 
 func _set_hero(value: RPGCharacter) -> void:
 	_hero = value
@@ -85,7 +98,7 @@ func _on_Defense_pressed():
 
 
 func _on_Flee_pressed():
-	_hero.use_skill("flee")
+	ai_manager.player_lose()
 
 
 func set_skill(skill: String):
@@ -117,15 +130,42 @@ func _on_target_button_pressed(target: RPGCharacter):
 	_hero.use_skill(current_skill, target)
 	visual_feedback.set_visual_feedback(_hero, current_skill, target)
 	
+	if target in enemies:
+		if target.hp.value == 0:
+			active_enemies_size -= 1
+
 	timer.start()
 	yield(timer, "timeout")
 	
 	current_party_member += 1
-	if party.size() > current_party_member:
+	if active_party_size > current_party_member:
 		_set_hero(party[current_party_member])
-	
-	else:
+		
+	elif active_enemies_size > 0:
 		hide()
 		current_party_member = 0
 		ai_manager.enemy = enemies[0]
+	
+	else: # players party wins
+		hide()
+		var gold_sum := 0
+		for e in enemies:
+			randomize()
+			gold_sum += randi()% e.gold
+		
+		var gold := [] 
+		for p in party:
+			gold.append(gold_sum / party.size())
+		
+		var exp_sum := 0
+		for e in enemies:
+			randomize()
+			exp_sum += randi()% e.exp
+		
+		var exp_points := [] 
+		for p in party:
+			exp_points.append(exp_sum / party.size())
+		
+
+		end_combat_panel.set_result(true, party, gold, exp_points)
 

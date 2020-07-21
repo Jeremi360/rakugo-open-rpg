@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://game/assets/icons/coins.png" type="Texture" id=1]
+[ext_resource path="res://game/assets/icons/add.png" type="Texture" id=2]
+[ext_resource path="res://game/rpg/CombatArea/ExpBox.gd" type="Script" id=3]
+[ext_resource path="res://game/assets/fonts/default_theme/montserrat_eb_22.tres" type="DynamicFont" id=4]
+
+[node name="ExpBox" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -798.0
+margin_bottom = -549.0
+rect_min_size = Vector2( 0, 50 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 11.0
+margin_right = 68.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 4 )
+text = "HERO"
+
+[node name="coins" type="TextureRect" parent="."]
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 51.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 108.0
+margin_top = 11.0
+margin_right = 147.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 4 )
+text = "100"
+
+[node name="add" type="TextureRect" parent="."]
+margin_left = 151.0
+margin_right = 183.0
+margin_bottom = 51.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 187.0
+margin_top = 11.0
+margin_right = 226.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 4 )
+text = "100"

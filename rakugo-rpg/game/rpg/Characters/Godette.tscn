@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://game/assets/sprites/battlers/godette.png" type="Texture" id=1]
-[ext_resource path="res://RPGCharacter.gd" type="Script" id=2]
+[ext_resource path="res://game/rpg/Characters/RPGCharacter.gd" type="Script" id=2]
 
 [node name="Godette" type="Node2D"]
 
