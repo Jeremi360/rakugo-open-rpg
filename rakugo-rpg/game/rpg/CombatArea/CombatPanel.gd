@@ -98,7 +98,7 @@ func _on_Defense_pressed():
 
 
 func _on_Flee_pressed():
-	_hero.use_skill("flee")
+	ai_manager.player_lose()
 
 
 func set_skill(skill: String):

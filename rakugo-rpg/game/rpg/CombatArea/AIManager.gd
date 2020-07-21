@@ -97,13 +97,17 @@ func use_random_skill() -> void:
 		combat_panel.show()
 	
 	else: # players party lose
-		combat_panel.hide()
-		var gold := [] 
-		for p in party:
-			gold.append(0)
+		player_lose()
 
-		var exp_points := [] 
-		for p in party:
-			exp_points.append(0)
-		
-		end_combat_panel.set_result(false, enemies, gold, exp_points)
+
+func player_lose() -> void:
+	combat_panel.hide()
+	var gold := [] 
+	for p in party:
+		gold.append(0)
+
+	var exp_points := [] 
+	for p in party:
+		exp_points.append(0)
+	
+	end_combat_panel.set_result(false, party, gold, exp_points)

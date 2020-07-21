@@ -301,3 +301,4 @@ icon = ExtResource( 6 )
 [connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Special" to="CombatPanel" method="_on_Special_toggled"]
 [connection signal="pressed" from="CombatPanel/HBox/SkillTypesGrid/Defense" to="CombatPanel" method="_on_Defense_pressed"]
 [connection signal="pressed" from="CombatPanel/HBox/SkillTypesGrid/Flee" to="CombatPanel" method="_on_Flee_pressed"]
+[connection signal="pressed" from="EndCombatPanel/VBoxContainer/Button" to="EndCombatPanel" method="_on_Button_pressed"]

@@ -83,12 +83,6 @@ func use_skill(skill: String, target: RPGCharacter = self) -> void:
 	if skill == "defense":
 		self.recive_attack("def", 5 * s, "def")
 
-	if skill == "flee":
-		# simple go back to prev dialog.
-		Rakugo.hide("CombatArea")
-		var prev = Rakugo.get_value("prev_dialog")
-		Rakugo.jump(prev[0], prev[1], prev[2])
-
 
 func recive_attack(attack_type: String, value: int, anim:String):
 	# minius will subtract from target hp/mana/def
