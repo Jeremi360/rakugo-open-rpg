@@ -9,14 +9,12 @@ var temp_id := 0
 
 func start_combat(started_by:="party"):
 	Rakugo.hide("InGameGUI")
+	$EndCombatPanel.hide()
 	var party := spawn_party(Rakugo.get_value("party"))
 	var enemies := spawn_enemies(Rakugo.get_value("enemies"))
 
-	$CombatPanel.party = party
-	$CombatPanel.enemies = enemies
-
-	$AIManager.party = party
-	$AIManager.enemies = enemies
+	$CombatPanel.set_party_n_enemies(party, enemies)
+	$AIManager.set_party_n_enemies(party, enemies)
 
 	if started_by == "party":
 		$CombatPanel.current_hero = party[0]

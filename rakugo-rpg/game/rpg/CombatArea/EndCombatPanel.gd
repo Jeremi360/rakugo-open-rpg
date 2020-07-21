@@ -1,4 +1,4 @@
-extends Popup
+extends Panel
 
 export var win_txt := "Win"
 export var win_color : Color = Color.gold
@@ -36,3 +36,6 @@ func set_result(win:bool, party:Array, gold:Array, exp_points) -> void:
 		p.exp_points.value += e
 		b.set_labels(p.character_name, p.color, g, e)
 		
+		box.add_child(b)
+
+	show()

@@ -10,12 +10,17 @@ export var level := 1
 
 # in enemy case it is max random gold limit that you get when enemy is defeated
 export var gold := 100
+# in enemy case it is max random exp limit that you get when enemy is defeated
+export var max_exp := 100
+export var max_hp := 100
+export var max_mana := 100
+export var max_special := 100 
 
 # RakugoRangedVar.value is always clamped bettween min and max
-var exp_points := RakugoRangedVar.new("exp_points", 0, 0, 100) # "exp" is keyword in GDScript
-var hp := RakugoRangedVar.new("hp", 100, 0, 100)
-var mana := RakugoRangedVar.new("mana", 100, 0, 100)
-var special := RakugoRangedVar.new("special", 100, 0, 100)
+var exp_points := RakugoRangedVar.new("exp_points", 0, 0, max_exp) # "exp" is keyword in GDScript
+var hp := RakugoRangedVar.new("hp", 100, 0, max_hp)
+var mana := RakugoRangedVar.new("mana", 100, 0, max_mana)
+var special := RakugoRangedVar.new("special", 100, 0, max_special)
 var unlocked_skills := ["sword attack", "special attack", "healing spell"]
 
 # this are just examples

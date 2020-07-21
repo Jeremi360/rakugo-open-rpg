@@ -4,17 +4,32 @@ extends Node
 export var combat_panel_path : NodePath
 export var visual_feedback_path : NodePath
 export var timer_path : NodePath 
+export var end_combat_panel_path : NodePath
 
 onready var combat_panel = get_node(combat_panel_path)
 onready var visual_feedback : RakugoTextLabel = get_node(visual_feedback_path)
 onready var timer : Timer = get_node(timer_path)
+onready var end_combat_panel : Panel = get_node(end_combat_panel_path)
+
 var enemy : RPGCharacter setget _set_enemy, _get_enemy
+
+var _enemy : RPGCharacter
 
 var party := []
 var enemies := []
 var skills := {}
-var _enemy : RPGCharacter
-var current_enemies_member := 0 
+
+var current_enemies_member := 0
+var active_party_size := 0 # number of alive party members
+var active_enemies_size := 0 # number of alive enemies
+
+func set_party_n_enemies(party_arr:Array, enemies_arr:Array) -> void:
+	party = party_arr
+	active_party_size = party_arr.size()
+
+	enemies = enemies_arr
+	active_enemies_size = enemies_arr.size()
+
 
 func _set_enemy(value:RPGCharacter) -> void:
 	_enemy = value
@@ -65,14 +80,30 @@ func use_random_skill() -> void:
 	_enemy.use_skill(skill, target)
 	visual_feedback.set_visual_feedback(_enemy, skill, target)
 
+	if target in party:
+		if target.hp.value == 0:
+			active_party_size -= 1
+
 	timer.start()
 	yield(timer, "timeout")
 
 	current_enemies_member += 1
-	if enemies.size() > current_enemies_member:
+	if active_enemies_size > current_enemies_member:
 		_set_enemy(enemies[current_enemies_member])
 	
-	else:
+	elif active_party_size > 0:
 		current_enemies_member = 0
 		combat_panel._set_hero(party[0])
 		combat_panel.show()
+	
+	else: # players party lose
+		combat_panel.hide()
+		var gold := [] 
+		for p in party:
+			gold.append(0)
+
+		var exp_points := [] 
+		for p in party:
+			exp_points.append(0)
+		
+		end_combat_panel.set_result(false, enemies, gold, exp_points)

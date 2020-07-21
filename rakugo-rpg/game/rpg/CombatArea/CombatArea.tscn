@@ -12,7 +12,7 @@
 [ext_resource path="res://game/rpg/CombatArea/CombatPanel.gd" type="Script" id=10]
 [ext_resource path="res://game/rpg/CombatArea/VisualFeedback.gd" type="Script" id=11]
 [ext_resource path="res://game/rpg/CombatArea/CombatArea.gd" type="Script" id=12]
-[ext_resource path="res://game/rpg/CombatArea/EndCombatPopup.gd" type="Script" id=13]
+[ext_resource path="res://game/rpg/CombatArea/EndCombatPanel.gd" type="Script" id=13]
 [ext_resource path="res://game/rpg/CombatArea/ExpBox.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ButtonGroup" id=1]
@@ -120,6 +120,7 @@ targets_buttons_parent_path = NodePath("HBox/TargetsGrid")
 ai_manager_path = NodePath("../AIManager")
 visual_feedback_path = NodePath("../VisualFeedback")
 timer_path = NodePath("../Timer")
+end_combat_panel_path = NodePath("../EndCombatPanel")
 
 [node name="HBox" type="HBoxContainer" parent="CombatPanel"]
 anchor_top = 1.0
@@ -215,6 +216,7 @@ script = ExtResource( 9 )
 combat_panel_path = NodePath("../CombatPanel")
 visual_feedback_path = NodePath("../VisualFeedback")
 timer_path = NodePath("../Timer")
+end_combat_panel_path = NodePath("../EndCombatPanel")
 
 [node name="VisualFeedback" type="RichTextLabel" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -241,59 +243,56 @@ anims/show_n_hide = SubResource( 2 )
 wait_time = 2.0
 one_shot = true
 
-[node name="EndCombatPopup" type="Popup" parent="."]
-visible = true
+[node name="EndCombatPanel" type="Panel" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -211.0
-margin_top = -142.0
-margin_right = 211.0
-margin_bottom = 142.0
+margin_left = -203.5
+margin_top = -143.0
+margin_right = 203.5
+margin_bottom = 143.0
 script = ExtResource( 13 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
-win_color = Color( 1, 0.47451, 0.00784314, 1 )
-lose_color = Color( 0.807843, 0.0901961, 0.0901961, 1 )
+win_txt = "Your Party Wins"
+win_color = Color( 0.776471, 0.521569, 0.0352941, 1 )
+lose_txt = "Your Party Lose"
+lose_color = Color( 0.815686, 0.0431373, 0.0431373, 1 )
 exp_box = ExtResource( 14 )
-box_path = NodePath("Panel/VBoxContainer/VBoxContainer2")
+box_path = NodePath("VBoxContainer/VBoxContainer2")
+label_path = NodePath("VBoxContainer/Label")
 
-[node name="Panel" type="Panel" parent="EndCombatPopup"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="EndCombatPopup/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="EndCombatPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="EndCombatPopup/Panel/VBoxContainer"]
-margin_right = 422.0
+[node name="Label" type="Label" parent="EndCombatPanel/VBoxContainer"]
+margin_right = 407.0
 margin_bottom = 60.0
 custom_fonts/font = ExtResource( 1 )
 text = "Win/Lose"
 align = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="EndCombatPopup/Panel/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="EndCombatPanel/VBoxContainer"]
 margin_top = 64.0
-margin_right = 422.0
-margin_bottom = 242.0
+margin_right = 407.0
+margin_bottom = 244.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="EndCombatPopup/Panel/VBoxContainer"]
-margin_left = 170.0
-margin_top = 246.0
-margin_right = 251.0
-margin_bottom = 284.0
+[node name="Button" type="Button" parent="EndCombatPanel/VBoxContainer"]
+margin_left = 163.0
+margin_top = 248.0
+margin_right = 244.0
+margin_bottom = 286.0
 size_flags_horizontal = 4
 text = "Close"
 icon = ExtResource( 6 )
