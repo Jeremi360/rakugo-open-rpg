@@ -1,5 +1,5 @@
 extends Character
-class_name RPGCharacter, "res://icon.png"
+class_name RPGCharacter, "res://game/rpg/icon.png"
 
 # make scripts that extend form this one fit your heros and enemies
 
