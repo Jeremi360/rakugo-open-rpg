@@ -160,7 +160,7 @@ func _on_target_button_pressed(target: RPGCharacter):
 		var exp_sum := 0
 		for e in enemies:
 			randomize()
-			exp_sum += randi()% e.exp
+			exp_sum += randi()% e.max_exp
 		
 		var exp_points := [] 
 		for p in party:

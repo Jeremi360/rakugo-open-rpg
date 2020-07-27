@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://themes/rpgm_like/rpgm_like.tres" type="Theme" id=1]
-[ext_resource path="res://addons/Rakugo/nodes/rakugo_label.gd" type="Script" id=2]
+[ext_resource path="res://addons/Rakugo/nodes/controls/rakugo_label.gd" type="Script" id=2]
 [ext_resource path="res://game/rpg/CombatArea/RPGButton.gd" type="Script" id=3]
 
 [node name="RPGButton" type="Button"]
@@ -26,8 +26,8 @@ mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
-bbcode_text = "[center]Attack cost[center]"
-text = "Attack cost"
+bbcode_text = "Attack "
+text = "Attack "
 scroll_active = false
 script = ExtResource( 2 )
 __meta__ = {
