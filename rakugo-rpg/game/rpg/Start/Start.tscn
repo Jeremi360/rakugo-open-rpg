@@ -18,8 +18,8 @@ dialogs_names = [ "combat_dialog" ]
 [node name="StartCombat" type="Node" parent="."]
 script = ExtResource( 3 )
 combat_area_path = NodePath("../CombatArea")
-party = [ ExtResource( 6 ) ]
-enemies = [ ExtResource( 5 ) ]
+party = [ ExtResource( 6 ), ExtResource( 6 ) ]
+enemies = [ ExtResource( 5 ), ExtResource( 5 ) ]
 
 [node name="CombatArea" parent="." instance=ExtResource( 4 )]
 visible = false

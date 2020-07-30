@@ -160,11 +160,14 @@ func _ready() -> void:
 
 	load_init_data()
 
+	for v in variables:
+		v.save_included = false
+
 	# set by game developer
-	define("title", game_title, true)
-	define("version", game_version, true)
+	define("title", game_title, false)
+	define("version", game_version, false)
 	OS.set_window_title(game_title + " " + game_version)
-	define("credits", game_credits, true)
+	define("credits", game_credits, false)
 
 	# it must be before define rakugo_version and godot_version to parse corretly :o
 	file.open(credits_path, file.READ)
@@ -646,6 +649,9 @@ func debug_dict(
 func debug(some_text = []) -> void:
 	if not debug_on:
 		return
+
+	if not started:
+		return	
 
 	if typeof(some_text) == TYPE_ARRAY:
 		var new_text = ""
