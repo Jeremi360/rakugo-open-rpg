@@ -13,12 +13,17 @@ func _on_menu(id:int) -> void:
 
 		# Rakugo Docs
 		2:
-			OS.shell_open("https://rakugo.readthedocs.io/en/latest/")
+			OS.shell_open("https://rakugoteam.github.io/RakugoDocs-new/")
 
 		# About Rakugo
 		3:
 			$AboutDialog.popup_centered()
+		
+		# Raport bug:
+		4:
+			OS.shell_open("https://github.com/rakugoteam/Rakugo/labels/bug")
 
 		# Rakugo Website:
-		4:
+		5:
 			OS.shell_open("https://rakugoteam.github.io/")
+

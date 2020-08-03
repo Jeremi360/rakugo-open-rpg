@@ -41,6 +41,7 @@ func _get_enemy() -> RPGCharacter:
 
 
 func get_random_skill_type() -> String:
+	randomize()
 	var t := randi() % 3
 	return ["attack", "magic", "special"][t]
 
@@ -54,6 +55,7 @@ func get_random_skill(type:String) -> String:
 	if type == "special":
 		skills = _enemy.special_skills
 	
+	randomize()
 	var s := randi() % skills.size()
 	return skills.keys()[s]
 
@@ -68,6 +70,7 @@ func get_random_target(skill:String) -> RPGCharacter:
 	if skills[skill].targets == "party":
 		targets = enemies
 	
+	randomize()
 	var t := randi() % skills.size()
 	return targets[t]
 
