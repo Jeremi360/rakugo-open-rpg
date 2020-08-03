@@ -7,9 +7,6 @@ func _ready() -> void:
 	var docs_icon := get_icon("Help", "EditorIcons")
 	get_popup().set_item_icon(2, docs_icon)
 
-	var err_icon := get_icon("ErrorSign", "EditorIcons")
-	get_popup().set_item_icon(4, err_icon)
-
 
 func connect_to_plugin() -> void:
 	# "res://addons/Rakugo/tools/RakugoTools.gd"

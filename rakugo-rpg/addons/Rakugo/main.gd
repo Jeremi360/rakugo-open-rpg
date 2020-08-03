@@ -161,7 +161,7 @@ func _ready() -> void:
 	load_init_data()
 
 	for v in variables:
-		v.save_included = false
+		variables[v].save_included = false
 
 	# set by game developer
 	define("title", game_title, false)
