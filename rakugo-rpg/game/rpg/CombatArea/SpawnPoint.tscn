@@ -338,15 +338,18 @@ tracks/7/keys = {
 "times": PoolRealArray( 0, 0.3, 0.6 )
 }
 
-[node name="SpawnPoint" type="YSort"]
+[node name="SpawnPoint" type="Position2D"]
 position = Vector2( 180.203, 433.823 )
 script = ExtResource( 5 )
+__meta__ = {
+"_gizmo_extents_": 104.7
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = -62.9289
-margin_top = -215.54
+margin_top = -347.866
 margin_right = 55.0711
-margin_bottom = -127.54
+margin_bottom = -259.866
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -400,9 +403,9 @@ __meta__ = {
 [node name="Label2" type="Label" parent="."]
 modulate = Color( 1, 0, 0, 0 )
 margin_left = -62.3992
-margin_top = -126.718
+margin_top = -259.044
 margin_right = 55.6008
-margin_bottom = -86.7184
+margin_bottom = -219.044
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )

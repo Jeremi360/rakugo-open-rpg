@@ -1,4 +1,4 @@
-extends YSort
+extends Position2D
 
 var rpg_ch: RPGCharacter
 
