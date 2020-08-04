@@ -72,8 +72,9 @@ func use_skill(skill: String, target: RPGCharacter = self) -> void:
 		target.recive_attack("hp", -20 * s, "hit")
 
 	if skill == "healing spell":
-		mana.value -= magic_skills[skill].cost
+		var m = -magic_skills[skill].cost
 		target.recive_attack("hp", 20 * s, "heal")
+		self.recive_attack("mana", m * s, "mana")
 
 	if skill == "special attack":
 		target.recive_attack("hp", -30 * s, "hit")

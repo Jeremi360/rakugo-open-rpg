@@ -19,15 +19,20 @@ var party := []
 var enemies := []
 var skills := {}
 
+var active_party := []
+var active_enemies := []
+
 var current_enemies_member := 0
 var active_party_size := 0 # number of alive party members
 var active_enemies_size := 0 # number of alive enemies
 
 func set_party_n_enemies(party_arr:Array, enemies_arr:Array) -> void:
 	party = party_arr
+	active_party = party_arr.duplicate()
 	active_party_size = party_arr.size()
 
 	enemies = enemies_arr
+	active_enemies = enemies_arr.duplicate()
 	active_enemies_size = enemies_arr.size()
 
 
@@ -62,17 +67,28 @@ func get_random_skill(type:String) -> String:
 
 func get_random_target(skill:String) -> RPGCharacter:
 	var targets := []
+	var active_targets_size := 0
 
 	# it must be this way
 	if skills[skill].targets == "enemies":
-		targets = party
+		targets = active_party
 	
 	if skills[skill].targets == "party":
-		targets = enemies
+		targets = active_enemies
 	
 	randomize()
-	var t := randi() % skills.size()
-	return targets[t]
+	var t := randi() % targets.size()
+	var target = targets[t]
+
+	if skills[skill].targets == "enemies":
+		active_party = party.duplicate()
+		active_party.remove(t)
+	
+	if skills[skill].targets == "party":
+		active_enemies = enemies.duplicate()
+		active_enemies.remove(t)
+	
+	return target
 
 
 func use_random_skill() -> void:
