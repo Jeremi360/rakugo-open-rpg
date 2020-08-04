@@ -84,22 +84,22 @@ texture = ExtResource( 4 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Enemy0" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 325.539, 408.352 )
+position = Vector2( 372.219, 355.957 )
 
 [node name="Enemy1" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 201.179, 408.352 )
+position = Vector2( 228.496, 404.241 )
 
 [node name="Enemy2" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 79.8164, 408.352 )
+position = Vector2( 81.1198, 464.657 )
 
 [node name="Hero0" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 701.614, 403.857 )
+position = Vector2( 657.2, 355.957 )
 
 [node name="Hero1" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 827.472, 403.857 )
+position = Vector2( 808.654, 404.241 )
 
 [node name="Hero2" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 951.831, 403.857 )
+position = Vector2( 956.081, 460.657 )
 
 [node name="CombatPanel" type="Panel" parent="."]
 anchor_top = 0.867
@@ -244,6 +244,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="EndCombatPanel" type="Panel" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

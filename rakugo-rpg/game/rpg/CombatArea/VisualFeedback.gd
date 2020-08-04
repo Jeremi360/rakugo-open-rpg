@@ -15,9 +15,10 @@ func set_visual_feedback(attacker : RPGCharacter, skill:String, target: RPGChara
 		txt_target
 	])
 	
-	rakugo_text = "{center}"
-	rakugo_text += t_arr.join(" ")
-	rakugo_text += "{/center}"
-	update_label()
+	_set_rakugo_text(
+		"{center}"
+		+ t_arr.join(" ")
+		+ "{/center}"
+	)
 	
 	$AnimationPlayer.play("show_n_hide")

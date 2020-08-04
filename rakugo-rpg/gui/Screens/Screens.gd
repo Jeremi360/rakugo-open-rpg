@@ -240,7 +240,7 @@ func _on_About_pressed():
 
 
 func _on_Help_pressed():
-	OS.shell_open("https://rakugo.readthedocs.io/en/latest/")
+	OS.shell_open("https://rakugoteam.github.io/RakugoDocs-new/")
 
 
 func _fullscreen_on_input(event):

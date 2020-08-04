@@ -59,7 +59,7 @@ func make_targets_buttons(targets: Array) -> void:
 			continue
 
 		var b: RPGButton = target_button.instance()
-		b.set_rpg_text(t.character_name, t.hp.value, t.icon_path)
+		b.set_rpg_text(t.character_name, t.hp.value, "")
 		targets_buttons_parent.add_child(b)
 		b.connect("pressed", self, "_on_target_button_pressed", [t])
 
@@ -160,7 +160,7 @@ func _on_target_button_pressed(target: RPGCharacter):
 		var exp_sum := 0
 		for e in enemies:
 			randomize()
-			exp_sum += randi()% e.exp
+			exp_sum += randi()% e.max_exp
 		
 		var exp_points := [] 
 		for p in party:

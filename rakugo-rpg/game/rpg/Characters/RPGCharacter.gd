@@ -2,8 +2,6 @@ extends Character
 class_name RPGCharacter, "res://game/rpg/icon.png"
 
 # make scripts that extend form this one fit your heros and enemies
-
-export (String, FILE, "*.png") var icon_path := ""
 export (String, "Hero", "Enemy", "NPC") var type := "Hero"
 
 export var level := 1
@@ -67,15 +65,16 @@ func use_skill(skill: String, target: RPGCharacter = self) -> void:
 	# override this func in script extend form this one fit your heros and enemies
 	randomize()
 	# random dnd roll dice style
-	var s : float = randi() % 20 + level
-	s /= 20
+	var r := (randi() % 20) + 1
+	var s : float = (r / 20.0) + level
 
 	if skill == "sword attack":
 		target.recive_attack("hp", -20 * s, "hit")
 
 	if skill == "healing spell":
-		mana.value -= magic_skills[skill].cost
+		var m = -magic_skills[skill].cost
 		target.recive_attack("hp", 20 * s, "heal")
+		self.recive_attack("mana", m * s, "mana")
 
 	if skill == "special attack":
 		target.recive_attack("hp", -30 * s, "hit")
