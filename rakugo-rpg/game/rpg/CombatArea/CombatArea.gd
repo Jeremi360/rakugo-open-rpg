@@ -63,3 +63,7 @@ func spawn_party(array: Array) -> Array:
 
 func spawn_enemies(array: Array) -> Array:
 	return spawn("Enemy", array)
+
+# turn off saveing during combat
+func _on_CombatArea_visibility_changed():
+	Rakugo.can_save = !visible

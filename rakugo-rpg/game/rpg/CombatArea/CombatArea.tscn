@@ -297,6 +297,7 @@ margin_bottom = 286.0
 size_flags_horizontal = 4
 text = "Close"
 icon = ExtResource( 6 )
+[connection signal="visibility_changed" from="." to="." method="_on_CombatArea_visibility_changed"]
 [connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Attack" to="CombatPanel" method="_on_Attack_toggled"]
 [connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Magic" to="CombatPanel" method="_on_Magic_toggled"]
 [connection signal="toggled" from="CombatPanel/HBox/SkillTypesGrid/Special" to="CombatPanel" method="_on_Special_toggled"]

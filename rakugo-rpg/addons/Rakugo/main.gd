@@ -83,6 +83,7 @@ var can_alphanumeric := true
 var emoji_size := 16
 var skipping := false
 var current_dialogs := {}
+var can_save := true
 
 const skip_types := [
 	StatementType.SAY,
