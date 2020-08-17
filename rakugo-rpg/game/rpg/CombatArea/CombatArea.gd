@@ -9,7 +9,9 @@ var temp_id := 0
 
 func start_combat(started_by:="party"):
 	Rakugo.hide("InGameGUI")
+	Rakugo.can_show_in_game_gui = false
 	$EndCombatPanel.hide()
+	
 	var party := spawn_party(Rakugo.get_value("party"))
 	var enemies := spawn_enemies(Rakugo.get_value("enemies"))
 

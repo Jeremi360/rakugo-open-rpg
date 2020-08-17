@@ -140,13 +140,18 @@ func _on_target_button_pressed(target: RPGCharacter):
 	current_party_member += 1
 	if active_party_size > current_party_member:
 		_set_hero(party[current_party_member])
+		return
 		
-	elif active_enemies_size > 0:
+	if active_enemies_size > 0:
 		hide()
 		current_party_member = 0
 		ai_manager.enemy = enemies[0]
+		return
 	
-	else: # players party wins
+	players_party_wins()
+	
+	
+func players_party_wins():
 		hide()
 		var gold_sum := 0
 		for e in enemies:

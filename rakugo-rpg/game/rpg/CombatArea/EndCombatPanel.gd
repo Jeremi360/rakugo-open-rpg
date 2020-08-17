@@ -44,6 +44,7 @@ func set_result(win:bool, party:Array, gold:Array, exp_points) -> void:
 func _on_Button_pressed():
 	# simple go back to prev dialog.
 	Rakugo.hide("CombatArea")
+	Rakugo.can_show_in_game_gui = true
 	Rakugo.show("InGameGUI")
 	var prev = Rakugo.get_value("prev_dialog")
 	Rakugo.jump(prev[0], prev[1], prev[2])

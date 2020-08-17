@@ -109,14 +109,15 @@ func use_random_skill() -> void:
 	current_enemies_member += 1
 	if active_enemies_size > current_enemies_member:
 		_set_enemy(enemies[current_enemies_member])
+		return
 	
-	elif active_party_size > 0:
+	if active_party_size > 0:
 		current_enemies_member = 0
 		combat_panel._set_hero(party[0])
 		combat_panel.show()
+		return
 	
-	else: # players party lose
-		player_lose()
+	player_lose()
 
 
 func player_lose() -> void:
