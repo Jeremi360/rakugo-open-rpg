@@ -25,15 +25,15 @@ var party := []
 var enemies := []
 
 var current_party_member := 0 
-var active_party_size := 0 # number of alive party members
-var active_enemies_size := 0 # number of alive enemies
+var alive_party_size := 0 # number of alive party members
+var alive_enemies_size := 0 # number of alive enemies
 
 func set_party_n_enemies(party_arr:Array, enemies_arr:Array) -> void:
 	party = party_arr
-	active_party_size = party_arr.size()
+	alive_party_size = party_arr.size()
 
 	enemies = enemies_arr
-	active_enemies_size = enemies_arr.size()
+	alive_enemies_size = enemies_arr.size()
 
 
 func _set_hero(value: RPGCharacter) -> void:
@@ -130,23 +130,29 @@ func _on_target_button_pressed(target: RPGCharacter):
 	_hero.use_skill(current_skill, target)
 	visual_feedback.set_visual_feedback(_hero, current_skill, target)
 	
-	if target in enemies:
-		if target.hp.value == 0:
-			active_enemies_size -= 1
+	alive_enemies_size = enemies.size()
+	for t in enemies:
+		if t.hp.value == 0:
+			alive_enemies_size -= 1
 
 	timer.start()
 	yield(timer, "timeout")
 	
 	current_party_member += 1
-	if active_party_size > current_party_member:
+	if alive_party_size > current_party_member:
 		_set_hero(party[current_party_member])
+		return
 		
-	elif active_enemies_size > 0:
+	if alive_enemies_size > 0:
 		hide()
 		current_party_member = 0
 		ai_manager.enemy = enemies[0]
+		return
 	
-	else: # players party wins
+	players_party_wins()
+	
+	
+func players_party_wins():
 		hide()
 		var gold_sum := 0
 		for e in enemies:
