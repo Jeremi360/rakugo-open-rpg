@@ -23,4 +23,5 @@ enemies = [ ExtResource( 5 ), ExtResource( 5 ) ]
 
 [node name="CombatArea" parent="." instance=ExtResource( 4 )]
 visible = false
+[connection signal="end" from="CombatDialog" to="CombatDialog" method="_on_CombatDialog_end"]
 [connection signal="start_combat" from="CombatDialog" to="StartCombat" method="_on_CombatDialog_start_combat"]

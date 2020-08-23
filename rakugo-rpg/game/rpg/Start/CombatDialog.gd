@@ -1,7 +1,7 @@
 extends GDScriptDialog
 
 signal start_combat
-signal loop
+signal end
 
 var prev_dialog : RakugoList
 
@@ -23,7 +23,7 @@ func combat_dialog(node_name, dialog_name):
 			"choices":
 				{
 					"yes": "start_combat",
-					"no" : "loop"
+					"no" : "end"
 				}
 		})
 
@@ -32,3 +32,5 @@ func _on_CombatDialog_loop():
 	jump(prev_dialog.value[0], prev_dialog.value[1], prev_dialog.value[2])
 	
 
+func _on_CombatDialog_end():
+	Rakugo.end_game()
