@@ -35,7 +35,7 @@ func get_page(node_name:String) -> Node:
 
 func get_viewport() -> Viewport:
 	return viewport_con.get_node("Viewport") as Viewport
-	
+
 
 func _ready():
 	if Engine.editor_hint:
