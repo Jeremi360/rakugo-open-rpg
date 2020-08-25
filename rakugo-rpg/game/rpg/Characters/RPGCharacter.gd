@@ -29,9 +29,13 @@ var attack_skills := {
 var magic_skills := {
 	"healing spell": {"cost": 20, "targets": "party"}
 }
-var special_skills := {
-	"special attack": {"cost": 20, "targets": "enemies"}
+
+# it should be moved to some global script 
+var items_stats := {
+	"mana potion": {"cost": 5, "targets": "party"}
 }
+
+var items := {"mana potion": 2}
 
 var def := 0
 
@@ -46,7 +50,7 @@ func _ready():
 	stats["exp_points"] = exp_points
 	stats["hp"] = hp
 	stats["mana"] = mana
-	stats["special"] = special
+	stats["items"] = items
 	stats["lvl"] = level
 	stats["unlocked_skills"] = unlocked_skills
 
@@ -76,8 +80,8 @@ func use_skill(skill: String, target: RPGCharacter = self) -> void:
 		target.recive_attack("hp", 20 * s, "heal")
 		self.recive_attack("mana", m * s, "mana")
 
-	if skill == "special attack":
-		target.recive_attack("hp", -30 * s, "hit")
+	if skill == "mana potion":
+		target.recive_attack("mana", 30 * s, "mana")
 
 	if skill == "defense":
 		self.recive_attack("def", 5 * s, "def")
