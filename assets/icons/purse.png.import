@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/purse.png-65004b1ca7cfbb39666144c9d156b431.stex"
+path="res://.import/purse.png-4ee5fc0a513c1a03987b86864f49fdea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/icons/purse.png"
-dest_files=[ "res://.import/purse.png-65004b1ca7cfbb39666144c9d156b431.stex" ]
+source_file="res://rpg-game-kit/assets/icons/purse.png"
+dest_files=[ "res://.import/purse.png-4ee5fc0a513c1a03987b86864f49fdea.stex" ]
 
 [params]
 

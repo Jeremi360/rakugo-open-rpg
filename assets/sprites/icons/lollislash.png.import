@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lollislash.png-776ad7d366eddc0afa9a1c6c48a79738.stex"
+path="res://.import/lollislash.png-9da4c9d6c1b100801c43623340d541b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/icons/lollislash.png"
-dest_files=[ "res://.import/lollislash.png-776ad7d366eddc0afa9a1c6c48a79738.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/icons/lollislash.png"
+dest_files=[ "res://.import/lollislash.png-9da4c9d6c1b100801c43623340d541b0.stex" ]
 
 [params]
 

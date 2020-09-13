@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/npc_quest_finished.png-b2d5c3f8c80ab8c5dcc2c12888210be5.stex"
+path="res://.import/npc_quest_finished.png-98f73267477f7edb3e819de7bbdd143d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/icons/npc_quest_finished.png"
-dest_files=[ "res://.import/npc_quest_finished.png-b2d5c3f8c80ab8c5dcc2c12888210be5.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/icons/npc_quest_finished.png"
+dest_files=[ "res://.import/npc_quest_finished.png-98f73267477f7edb3e819de7bbdd143d.stex" ]
 
 [params]
 

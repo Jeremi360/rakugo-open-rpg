@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bilboshot.png-3f6bfa5c6eda0a83f37ab941fbccd321.stex"
+path="res://.import/bilboshot.png-3e7b3549ccdc2b0f389455abf19495c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/icons/bilboshot.png"
-dest_files=[ "res://.import/bilboshot.png-3f6bfa5c6eda0a83f37ab941fbccd321.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/icons/bilboshot.png"
+dest_files=[ "res://.import/bilboshot.png-3e7b3549ccdc2b0f389455abf19495c9.stex" ]
 
 [params]
 

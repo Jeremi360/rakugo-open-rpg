@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/godette.png-63e1881f857306f5a5cab196ec78065f.stex"
+path="res://.import/godette.png-d22f4c7db3cc2b19fdab6066613d34e1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/battlers/godette.png"
-dest_files=[ "res://.import/godette.png-63e1881f857306f5a5cab196ec78065f.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/battlers/godette.png"
+dest_files=[ "res://.import/godette.png-d22f4c7db3cc2b19fdab6066613d34e1.stex" ]
 
 [params]
 

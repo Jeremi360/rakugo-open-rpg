@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/potion_mana.png-9239dd433d54c59200ee067f9a780b25.stex"
+path="res://.import/potion_mana.png-2a66ec5479e6de20de1dcc619bd4941f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/icons/potion_mana.png"
-dest_files=[ "res://.import/potion_mana.png-9239dd433d54c59200ee067f9a780b25.stex" ]
+source_file="res://rpg-game-kit/assets/icons/potion_mana.png"
+dest_files=[ "res://.import/potion_mana.png-2a66ec5479e6de20de1dcc619bd4941f.stex" ]
 
 [params]
 

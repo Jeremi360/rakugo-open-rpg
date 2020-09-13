@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/actor.png-d36ea991debffa3acb13d1649ca5ec07.stex"
+path="res://.import/actor.png-09c4a776cd512f0a85166b20cf40cc56.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/tilesets/grid/actor.png"
-dest_files=[ "res://.import/actor.png-d36ea991debffa3acb13d1649ca5ec07.stex" ]
+source_file="res://rpg-game-kit/assets/tilesets/grid/actor.png"
+dest_files=[ "res://.import/actor.png-09c4a776cd512f0a85166b20cf40cc56.stex" ]
 
 [params]
 

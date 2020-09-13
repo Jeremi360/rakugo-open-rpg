@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/robi_portrait_256.png-d660ecb4814257c00759152b1759b791.stex"
+path="res://.import/robi_portrait_256.png-3c535428f04a68b68750704a6c61eded.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/battlers/robi_portrait_256.png"
-dest_files=[ "res://.import/robi_portrait_256.png-d660ecb4814257c00759152b1759b791.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/battlers/robi_portrait_256.png"
+dest_files=[ "res://.import/robi_portrait_256.png-3c535428f04a68b68750704a6c61eded.stex" ]
 
 [params]
 

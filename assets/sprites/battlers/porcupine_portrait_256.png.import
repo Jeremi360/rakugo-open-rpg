@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/porcupine_portrait_256.png-8889b8dcd801e743efe742956e394436.stex"
+path="res://.import/porcupine_portrait_256.png-54083b51443dc20ef534c090b6f81e99.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/battlers/porcupine_portrait_256.png"
-dest_files=[ "res://.import/porcupine_portrait_256.png-8889b8dcd801e743efe742956e394436.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/battlers/porcupine_portrait_256.png"
+dest_files=[ "res://.import/porcupine_portrait_256.png-54083b51443dc20ef534c090b6f81e99.stex" ]
 
 [params]
 

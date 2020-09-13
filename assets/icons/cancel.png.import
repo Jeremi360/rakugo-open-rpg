@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cancel.png-b19aa7b03a64313c5740cc0132a23015.stex"
+path="res://.import/cancel.png-459d022b72f67812fd114810634f6209.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/icons/cancel.png"
-dest_files=[ "res://.import/cancel.png-b19aa7b03a64313c5740cc0132a23015.stex" ]
+source_file="res://rpg-game-kit/assets/icons/cancel.png"
+dest_files=[ "res://.import/cancel.png-459d022b72f67812fd114810634f6209.stex" ]
 
 [params]
 

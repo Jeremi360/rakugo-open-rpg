@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/npc_quest_active.png-6d6032e076f9d71d98720a6b5da33bad.stex"
+path="res://.import/npc_quest_active.png-7132b8ff50f103815ec50ac7ef644539.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/icons/npc_quest_active.png"
-dest_files=[ "res://.import/npc_quest_active.png-6d6032e076f9d71d98720a6b5da33bad.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/icons/npc_quest_active.png"
+dest_files=[ "res://.import/npc_quest_active.png-7132b8ff50f103815ec50ac7ef644539.stex" ]
 
 [params]
 

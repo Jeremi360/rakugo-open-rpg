@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/remove.png-80e6201ff59c0cce80318500bd8f23c0.stex"
+path="res://.import/remove.png-ee4703bacc97a5fa546f039d8e1aabbe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/icons/remove.png"
-dest_files=[ "res://.import/remove.png-80e6201ff59c0cce80318500bd8f23c0.stex" ]
+source_file="res://rpg-game-kit/assets/icons/remove.png"
+dest_files=[ "res://.import/remove.png-ee4703bacc97a5fa546f039d8e1aabbe.stex" ]
 
 [params]
 

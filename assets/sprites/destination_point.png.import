@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/destination_point.png-81166bc1cbdbd4f75693a57183741c4c.stex"
+path="res://.import/destination_point.png-05599ceb28f2eb47cd2ec6890caa9a96.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/destination_point.png"
-dest_files=[ "res://.import/destination_point.png-81166bc1cbdbd4f75693a57183741c4c.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/destination_point.png"
+dest_files=[ "res://.import/destination_point.png-05599ceb28f2eb47cd2ec6890caa9a96.stex" ]
 
 [params]
 

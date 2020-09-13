@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/potion_health.png-812762ac4bce2ed8c510f88d2a8b86ee.stex"
+path="res://.import/potion_health.png-6cad4c7a3ee091828620f305ba0c0ea5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/icons/potion_health.png"
-dest_files=[ "res://.import/potion_health.png-812762ac4bce2ed8c510f88d2a8b86ee.stex" ]
+source_file="res://rpg-game-kit/assets/icons/potion_health.png"
+dest_files=[ "res://.import/potion_health.png-6cad4c7a3ee091828620f305ba0c0ea5.stex" ]
 
 [params]
 

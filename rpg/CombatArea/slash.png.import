@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/slash.png-a1f02d0fff28f6358ec96dbaa4709936.stex"
+path="res://.import/slash.png-84978f2d76932ce15cecabca3e740986.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/rpg/CombatArea/slash.png"
-dest_files=[ "res://.import/slash.png-a1f02d0fff28f6358ec96dbaa4709936.stex" ]
+source_file="res://rpg-game-kit/rpg/CombatArea/slash.png"
+dest_files=[ "res://.import/slash.png-84978f2d76932ce15cecabca3e740986.stex" ]
 
 [params]
 

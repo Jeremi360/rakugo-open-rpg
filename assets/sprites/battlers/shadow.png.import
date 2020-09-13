@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shadow.png-134e8678ae3984e7662e773db5bcfc17.stex"
+path="res://.import/shadow.png-44c8c42a2fd3bfe75f8107fbb5237ce2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/battlers/shadow.png"
-dest_files=[ "res://.import/shadow.png-134e8678ae3984e7662e773db5bcfc17.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/battlers/shadow.png"
+dest_files=[ "res://.import/shadow.png-44c8c42a2fd3bfe75f8107fbb5237ce2.stex" ]
 
 [params]
 

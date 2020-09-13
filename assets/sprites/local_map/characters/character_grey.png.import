@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/character_grey.png-99b4e21969d572dcf866c44c8d698edf.stex"
+path="res://.import/character_grey.png-0bafc0d23b5adea818113ec211be601e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/local_map/characters/character_grey.png"
-dest_files=[ "res://.import/character_grey.png-99b4e21969d572dcf866c44c8d698edf.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/local_map/characters/character_grey.png"
+dest_files=[ "res://.import/character_grey.png-0bafc0d23b5adea818113ec211be601e.stex" ]
 
 [params]
 

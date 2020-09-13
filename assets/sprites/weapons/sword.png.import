@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sword.png-de334b87b9680d30f9c97605bd1dfde6.stex"
+path="res://.import/sword.png-5a5bc8fed423781b71c61d4070402340.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/weapons/sword.png"
-dest_files=[ "res://.import/sword.png-de334b87b9680d30f9c97605bd1dfde6.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/weapons/sword.png"
+dest_files=[ "res://.import/sword.png-5a5bc8fed423781b71c61d4070402340.stex" ]
 
 [params]
 

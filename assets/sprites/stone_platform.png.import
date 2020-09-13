@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stone_platform.png-daf5ff12c48bbc4510332ed37e9495ed.stex"
+path="res://.import/stone_platform.png-bfa29424202d44ad0fba913e5fbac60a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/stone_platform.png"
-dest_files=[ "res://.import/stone_platform.png-daf5ff12c48bbc4510332ed37e9495ed.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/stone_platform.png"
+dest_files=[ "res://.import/stone_platform.png-bfa29424202d44ad0fba913e5fbac60a.stex" ]
 
 [params]
 
