@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/curtain.png-d8a2e00599b7ec0054807fe8ba650004.stex"
+path="res://.import/curtain.png-51e84dbc4afd0eb626870b421d2c5e03.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/shaders/masks/curtain.png"
-dest_files=[ "res://.import/curtain.png-d8a2e00599b7ec0054807fe8ba650004.stex" ]
+source_file="res://rpg-game-kit/assets/shaders/masks/curtain.png"
+dest_files=[ "res://.import/curtain.png-51e84dbc4afd0eb626870b421d2c5e03.stex" ]
 
 [params]
 

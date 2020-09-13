@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/quest_finished_icon.png-ee6854acd6147b5650d886b0728f0840.stex"
+path="res://.import/quest_finished_icon.png-c55d9934d3fbcb22b47bf2bdb903a2b1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/icons/quest_finished_icon.png"
-dest_files=[ "res://.import/quest_finished_icon.png-ee6854acd6147b5650d886b0728f0840.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/icons/quest_finished_icon.png"
+dest_files=[ "res://.import/quest_finished_icon.png-c55d9934d3fbcb22b47bf2bdb903a2b1.stex" ]
 
 [params]
 

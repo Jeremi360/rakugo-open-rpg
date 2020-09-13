@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/reek_2.png-d740d3fee2e841564b63f50fe88fde98.stex"
+path="res://.import/reek_2.png-0aef19102ae430257a89a956ed0fe849.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/background/grasslands/reek_2.png"
-dest_files=[ "res://.import/reek_2.png-d740d3fee2e841564b63f50fe88fde98.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/background/grasslands/reek_2.png"
+dest_files=[ "res://.import/reek_2.png-0aef19102ae430257a89a956ed0fe849.stex" ]
 
 [params]
 

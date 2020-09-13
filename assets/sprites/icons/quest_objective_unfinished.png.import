@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/quest_objective_unfinished.png-fb17d871633865f2cb72dcf8b03254b0.stex"
+path="res://.import/quest_objective_unfinished.png-613ac83a7339df3a5792e58bbbcf907a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/icons/quest_objective_unfinished.png"
-dest_files=[ "res://.import/quest_objective_unfinished.png-fb17d871633865f2cb72dcf8b03254b0.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/icons/quest_objective_unfinished.png"
+dest_files=[ "res://.import/quest_objective_unfinished.png-613ac83a7339df3a5792e58bbbcf907a.stex" ]
 
 [params]
 

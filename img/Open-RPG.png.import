@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/add.png-3eaa5fcaf15a691d3d431c86fe763068.stex"
+path="res://.import/Open-RPG.png-86606d6b6488bff9b9db07dfe585b817.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rpg-game-kit/assets/icons/add.png"
-dest_files=[ "res://.import/add.png-3eaa5fcaf15a691d3d431c86fe763068.stex" ]
+source_file="res://rpg-game-kit/img/Open-RPG.png"
+dest_files=[ "res://.import/Open-RPG.png-86606d6b6488bff9b9db07dfe585b817.stex" ]
 
 [params]
 

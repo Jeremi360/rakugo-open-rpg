@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grasslands.png-395140cc35ad355eb1fe1505580d7500.stex"
+path="res://.import/grasslands.png-a8e86b8047e806a07917ffa03e231620.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/local_map/tilesets/grasslands.png"
-dest_files=[ "res://.import/grasslands.png-395140cc35ad355eb1fe1505580d7500.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/local_map/tilesets/grasslands.png"
+dest_files=[ "res://.import/grasslands.png-a8e86b8047e806a07917ffa03e231620.stex" ]
 
 [params]
 

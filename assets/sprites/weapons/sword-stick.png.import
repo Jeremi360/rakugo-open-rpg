@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sword-stick.png-ce467f7b39daaddac5711b3f628be7d6.stex"
+path="res://.import/sword-stick.png-a8e4c61e02fb10f9907955abde50d701.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/weapons/sword-stick.png"
-dest_files=[ "res://.import/sword-stick.png-ce467f7b39daaddac5711b3f628be7d6.stex" ]
+source_file="res://rpg-game-kit/assets/sprites/weapons/sword-stick.png"
+dest_files=[ "res://.import/sword-stick.png-a8e4c61e02fb10f9907955abde50d701.stex" ]
 
 [params]
 

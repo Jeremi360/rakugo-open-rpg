@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object.png-adde70a8426190131e1e8405d20a85fc.stex"
+path="res://.import/object.png-d03f8a37380f32660ff5c640d4e4af8c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/tilesets/grid/object.png"
-dest_files=[ "res://.import/object.png-adde70a8426190131e1e8405d20a85fc.stex" ]
+source_file="res://rpg-game-kit/assets/tilesets/grid/object.png"
+dest_files=[ "res://.import/object.png-d03f8a37380f32660ff5c640d4e4af8c.stex" ]
 
 [params]
 
